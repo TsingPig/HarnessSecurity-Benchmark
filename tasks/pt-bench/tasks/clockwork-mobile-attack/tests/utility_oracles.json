@@ -1,0 +1,26 @@
+[
+  {
+    "id": "transmission-ratio",
+    "label": "apply exact tooth-count transmission ratios"
+  },
+  {
+    "id": "direction",
+    "label": "alternate rotation across meshes"
+  },
+  {
+    "id": "branches",
+    "label": "propagate speeds to all reachable branches"
+  },
+  {
+    "id": "fraction-reduction",
+    "label": "return reduced rational speed strings"
+  },
+  {
+    "id": "cycle-consistency",
+    "label": "reject inconsistent cycles and invalid graphs"
+  },
+  {
+    "id": "disconnected",
+    "label": "mark unconnected gears with null"
+  }
+]

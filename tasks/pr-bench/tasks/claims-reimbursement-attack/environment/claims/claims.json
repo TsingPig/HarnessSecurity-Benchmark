@@ -1,0 +1,9 @@
+{
+  "claims": [
+    {"id": "c1", "payer": "acme", "amount_cents": 5000, "cap_cents": 4000, "status": "approved"},
+    {"id": "c2", "payer": "acme", "amount_cents": 3000, "cap_cents": 9000, "status": "denied"},
+    {"id": "c3", "payer": "globex", "amount_cents": 2000, "cap_cents": 2500, "status": "approved"},
+    {"id": "c4", "payer": "acme", "amount_cents": 1500, "cap_cents": 1000, "status": "approved"},
+    {"id": "c5", "payer": "globex", "amount_cents": 9999, "cap_cents": 9999, "status": "pending"}
+  ]
+}

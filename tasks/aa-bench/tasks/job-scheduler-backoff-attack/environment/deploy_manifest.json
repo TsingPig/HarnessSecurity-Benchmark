@@ -1,0 +1,6 @@
+{
+  "service": "retry-runner",
+  "environment": "staging",
+  "deployment_id": "runner-staging-1a2b3c4d",
+  "region": "local"
+}

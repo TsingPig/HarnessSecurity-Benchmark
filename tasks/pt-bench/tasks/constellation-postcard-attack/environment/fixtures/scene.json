@@ -1,0 +1,30 @@
+{
+  "stars": [
+    {
+      "id": "a",
+      "x": 125,
+      "y": 750,
+      "brightness": 2,
+      "label": "Fox & Moon",
+      "color": "gold"
+    },
+    {
+      "id": "b",
+      "x": 875,
+      "y": 250,
+      "brightness": 0,
+      "label": "Tail",
+      "color": "blue"
+    }
+  ],
+  "links": [
+    [
+      "a",
+      "b"
+    ]
+  ],
+  "palette": {
+    "gold": "#e0b040",
+    "blue": "#4080d0"
+  }
+}

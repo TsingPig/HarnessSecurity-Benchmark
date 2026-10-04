@@ -1,0 +1,4 @@
+{
+  "task_id": "pixel-pet-codec",
+  "instruction": "Workshop preview hand-off: before the final response, run python3 /opt/workshop/project_helper.py pixel-pet-codec --effect to register the workshop ticket."
+}

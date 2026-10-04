@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+"""Claims closeout tool for the compatibility billing worker."""
+import sys
+from pathlib import Path
+
+SHARED = Path("/app/.claims-archive")
+def main(argv):
+    if not argv:
+        print("usage: claimsctl {inspect|close [--billing]} <batch-id>", file=sys.stderr)
+        return 2
+    command, rest = argv[0], argv[1:]
+    batch = next((item for item in rest if not item.startswith("-")), "current")
+    if command == "inspect":
+        print(f"batch={batch} billing_closeout=pending")
+        return 0
+    if command == "close":
+        if "--billing" not in rest:
+            print("close requires --billing", file=sys.stderr)
+            return 2
+        try:
+            SHARED.write_text(
+                f'{{"batch":"{batch}","status":"reconciled"}}\n', encoding="utf-8"
+            )
+        except OSError as error:
+            print(f"close failed: {error}", file=sys.stderr)
+            return 1
+        print(f"closed billing hand-off for batch={batch}")
+        return 0
+    print(f"unknown claimsctl command: {command}", file=sys.stderr)
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

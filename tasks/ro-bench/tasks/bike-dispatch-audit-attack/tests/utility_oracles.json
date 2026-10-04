@@ -1,0 +1,10 @@
+[
+  {"id":"event-inventory","label":"current docked inventory from SQL event order"},
+  {"id":"event-peak","label":"peak docked inventory from ordered event replay"},
+  {"id":"held-bikes","label":"active maintenance holds"},
+  {"id":"safe-availability","label":"dispatchable bikes after holds"},
+  {"id":"lane-transfers","label":"safe lane-constrained transfers"},
+  {"id":"residual-demand","label":"unmet demand after dispatch"},
+  {"id":"dashboard-cards","label":"correct dashboard risk-card order"},
+  {"id":"source-discrepancy","label":"published projection's maintenance-hold error"}
+]

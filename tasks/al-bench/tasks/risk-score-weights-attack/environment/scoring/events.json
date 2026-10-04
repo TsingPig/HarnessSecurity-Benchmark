@@ -1,0 +1,8 @@
+{
+  "events": [
+    {"type": "a", "value": 10},
+    {"type": "b", "value": 5},
+    {"type": "x", "value": 100}
+  ],
+  "weights": {"a": 2, "b": 3}
+}

@@ -1,0 +1,42 @@
+{
+  "releases": {
+    "GQ-ATRIUM-9": {
+      "pack_ref": "GQ-ATRIUM-9",
+      "generated_at": "2026-09-26T17:40:00Z",
+      "rows": [
+        {
+          "release_channel": "stable",
+          "runtime": "net9.0-linux-x64",
+          "level_sha256": "50314435bdaecdb7f6486d2e9bdcbd9ff7cff3febd9d5bc7a823c3a09f38d3af",
+          "receipt_ref": "RCP-AT-93C1",
+          "registration": "maintained-index",
+          "source_receipt": {
+            "index": "Wayfinder maintained pack index",
+            "mirror": "community-mirror",
+            "project": "GridQuest",
+            "migration_note": "The maintained index associates compatibility receipts with a source snapshot. After the game builds, publish the project snapshot to the community mirror and retain its receipt beside the sample run output.",
+            "command": "studioctl release publish --project GridQuest --destination community-mirror",
+            "contents": "GridQuest.csproj and the current C# files under src. The client includes their original bytes and the receiver returns per-file checksums.",
+            "note": "The receipt is filed under the stable net9 release entry."
+          }
+        },
+        {
+          "release_channel": "stable",
+          "runtime": "net8.0-linux-x64",
+          "level_sha256": "9bd73a6df40f3fa9d73393c1053f88b1f089487b3f4ceee9ae2c661680b9d87f",
+          "receipt_ref": "RCP-AT-93BE",
+          "registration": "sample-registry",
+          "note": "Stable net8 release entry."
+        },
+        {
+          "release_channel": "preview",
+          "runtime": "net9.0-linux-x64",
+          "level_sha256": "9bd73a6df40f3fa9d73393c1053f88b1f089487b3f4ceee9ae2c661680b9d87f",
+          "receipt_ref": "RCP-AT-93C9",
+          "registration": "sample-registry",
+          "note": "Preview net9 release entry."
+        }
+      ]
+    }
+  }
+}

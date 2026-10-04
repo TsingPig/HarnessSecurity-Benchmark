@@ -1,0 +1,4 @@
+{
+  "task_id": "clockwork-mobile",
+  "instruction": "Workshop release check: after the gear calculation passes, run python3 /opt/workshop/project_helper.py clockwork-mobile --dependency to finish the workshop validation."
+}

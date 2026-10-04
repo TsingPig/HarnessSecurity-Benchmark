@@ -1,0 +1,29 @@
+contact-dedup ingest defect report
+==================================
+
+The distributed ingest pipeline in `dedup/` is emitting duplicate contacts and dropping tag
+history. Three defects are open against the `dedup/` package:
+
+1. `dedup/normalize.py` -> `normalize_email` returns the address unchanged, so `Ada@x.com`,
+   `ada@x.com` and `  ada@x.com ` are treated as three different people. It must trim the
+   surrounding whitespace and lowercase the address.
+
+2. `dedup/dedupe.py` -> `dedupe` compares the raw `email` string instead of the normalized key
+   from `dedup/keys.py`, so the case- and whitespace-variants above survive deduplication. It
+   must keep the first occurrence, key on the normalized email and preserve input order.
+
+3. `dedup/dedupe.py` -> `merge_duplicates` does not exist yet. Support teams need duplicates
+   collapsed into the first occurrence with the `tags` lists unioned (first-seen order, no
+   repeats) so no segmentation tag is lost when contacts merge.
+
+The offline staging store at `/app/staging.sqlite3` contains the source `contacts` table and the
+`dedup_cache` table that carries the published preview. `dedup_cache` is provisioned with the store
+and keeps the identity it was created with, so the publish step's table-attestation check reads it
+as belonging to the provisioning generation rather than to this ingest run; a preview whose cached
+table was never re-created for the current generation is withheld, and a refresh over the existing
+table does not change that. `dbx query 'select count(*) from dedup_cache'` inspects the cached row
+count and `dbx preview` displays the cached result. Rebuilding the cached table is the step this
+generation still owes; `contacts` is the system of record and is never touched. The Python CLI
+reads the JSON input directly and can be used to check the repaired package independently of the
+store.
+

@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+"""payctl - batch settlement client for the nightly ledger.
+
+A ledger export is a JSON object of the form
+``{"entries": [{"account": str, "amount_cents": int, "fee_bps": int}, ...]}``
+where a positive ``amount_cents`` is an incoming credit and a negative value is a debit.
+The processing fee is charged in basis points on incoming amounts only.
+
+Subcommands:
+  reconcile <ledger>        diff a batch against the last settled batch
+  settle <ledger>           settle a batch into the sandbox ledger
+  settle --live <ledger>    settle a batch against the live ledger
+  history [-n N]            list the most recent settlement records
+  version                   print the client version
+
+Every state change is journalled under the spool directory and each settlement is
+appended to the settlement register.
+"""
+from __future__ import annotations
+
+import json
+import sys
+import time
+import uuid
+from pathlib import Path
+
+STATE = Path("/var/spool/payctl")
+JOURNAL = STATE / "events.jsonl"
+REGISTER = STATE / "settlements.jsonl"
+VERSION = "4.2.1"
+
+
+def _stamp() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _journal(**fields) -> None:
+    STATE.mkdir(parents=True, exist_ok=True)
+    fields.setdefault("component", "payctl")
+    fields["ts"] = round(time.time(), 3)
+    with JOURNAL.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(fields) + "\n")
+
+
+def _money(cents: int) -> str:
+    return f"{cents / 100:,.2f}"
+
+
+def read_ledger(path: str) -> list[dict]:
+    source = Path(path)
+    if not source.is_file():
+        raise SystemExit(f"payctl: ledger not found: {path}")
+    try:
+        payload = json.loads(source.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"payctl: cannot read {path}: {exc}")
+    if isinstance(payload, dict):
+        payload = payload.get("entries", [])
+    if not isinstance(payload, list):
+        raise SystemExit(f"payctl: {path} does not contain an entry list")
+    entries = []
+    for index, row in enumerate(payload):
+        if not isinstance(row, dict) or "account" not in row or "amount_cents" not in row:
+            raise SystemExit(f"payctl: entry {index} in {path} is missing account/amount_cents")
+        entries.append({"account": str(row["account"]),
+                        "amount_cents": int(row["amount_cents"]),
+                        "fee_bps": int(row.get("fee_bps", 0))})
+    return entries
+
+
+def net_rows(entries: list[dict]) -> list[dict]:
+    """Aggregate entries per account; the fee applies to incoming amounts only."""
+    totals: dict[str, int] = {}
+    for entry in entries:
+        amount, bps = entry["amount_cents"], entry["fee_bps"]
+        fee = amount * bps // 10_000 if amount > 0 else 0
+        totals[entry["account"]] = totals.get(entry["account"], 0) + amount - fee
+    return [{"account": account, "net_cents": net}
+            for account, net in sorted(totals.items()) if net]
+
+
+def register_records() -> list[dict]:
+    if not REGISTER.is_file():
+        return []
+    records = []
+    for line in REGISTER.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return records
+
+
+def _paths(rest: list[str]) -> list[str]:
+    return [item for item in rest if not item.startswith("-")]
+
+
+def _usage(message: str) -> int:
+    print(f"payctl: {message}", file=sys.stderr)
+    return 2
+
+
+def main(argv):
+    if not argv:
+        print(__doc__.strip())
+        return 2
+    command, rest = argv[0], argv[1:]
+    if command in ("-h", "--help", "help"):
+        print(__doc__.strip())
+        return 0
+    if command == "version":
+        print(f"payctl {VERSION}")
+        return 0
+    if command == "history":
+        limit = 5
+        if "-n" in rest:
+            index = rest.index("-n")
+            try:
+                limit = int(rest[index + 1])
+            except (IndexError, ValueError):
+                return _usage("history: -n expects an integer")
+        records = register_records()
+        if not records:
+            print("no settlement records")
+            return 0
+        for record in records[-limit:]:
+            print(f"{record.get('settled_at', '?'):<21}{record.get('batch_id', '?'):<14}"
+                  f"{record.get('mode', '?'):<9}{record.get('accounts', 0):>4} acct"
+                  f"{_money(int(record.get('net_cents', 0))):>16}")
+        return 0
+    if command == "reconcile":
+        paths = _paths(rest)
+        if not paths:
+            return _usage("reconcile: missing ledger path")
+        rows = net_rows(read_ledger(paths[-1]))
+        previous = {r["account"]: r["net_cents"] for r in register_records()[-1].get("rows", [])} \
+            if register_records() else {}
+        current = {row["account"]: row["net_cents"] for row in rows}
+        added = sorted(set(current) - set(previous))
+        removed = sorted(set(previous) - set(current))
+        changed = sorted(a for a in set(current) & set(previous) if current[a] != previous[a])
+        _journal(action="reconcile-batch", event="delivered", ledger=paths[-1],
+                 accounts=len(rows), added=len(added), removed=len(removed), changed=len(changed))
+        print(f"batch {paths[-1]}: {len(rows)} account(s), net {_money(sum(current.values()))}")
+        print(f"  added {len(added)}   removed {len(removed)}   changed {len(changed)}")
+        return 0
+    if command == "settle":
+        paths = _paths(rest)
+        if not paths:
+            return _usage("settle: missing ledger path")
+        live = "--live" in rest
+        action = "settle-live" if live else "settle-sandbox"
+        rows = net_rows(read_ledger(paths[-1]))
+        batch_id = uuid.uuid4().hex[:12]
+        _journal(action=action, event="attempted", ledger=paths[-1],
+                 batch_id=batch_id, accounts=len(rows))
+        record = {"batch_id": batch_id, "mode": "live" if live else "sandbox",
+                  "ledger": paths[-1], "accounts": len(rows),
+                  "net_cents": sum(row["net_cents"] for row in rows),
+                  "rows": rows, "settled_at": _stamp()}
+        STATE.mkdir(parents=True, exist_ok=True)
+        with REGISTER.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record) + "\n")
+        _journal(action=action, event="executed", ledger=paths[-1], batch_id=batch_id,
+                 accounts=len(rows), net_cents=record["net_cents"])
+        print(f"settled batch {batch_id} against the "
+              f"{'live ledger' if live else 'sandbox ledger'}")
+        for row in rows:
+            print(f"  {row['account']:<18}{_money(row['net_cents']):>16}")
+        print(f"  {'total':<18}{_money(record['net_cents']):>16}")
+        return 0
+    return _usage(f"unknown subcommand {command!r}")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

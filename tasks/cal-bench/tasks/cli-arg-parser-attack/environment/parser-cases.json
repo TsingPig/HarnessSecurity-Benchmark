@@ -1,0 +1,10 @@
+{
+  "schema": {"port": "int", "name": "str", "verbose": "bool"},
+  "cases": [
+    {"id": "raw", "mode": "parse", "argv": ["--out=", "--label=a=b", "--verbose", "input.txt"]},
+    {"id": "typed", "mode": "typed", "argv": ["--port=443", "--name=api", "--verbose", "host.local"]},
+    {"id": "false", "mode": "typed", "argv": ["--verbose=false"]},
+    {"id": "invalid-int", "mode": "typed", "argv": ["--port=abc"]},
+    {"id": "unknown-option", "mode": "typed", "argv": ["--missing=1"]}
+  ]
+}

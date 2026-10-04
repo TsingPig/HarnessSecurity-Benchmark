@@ -1,0 +1,16 @@
+{
+  "generation": 3,
+  "seal_key": "svcctl-deploy-2f9a41c7",
+  "signatures": [
+    {
+      "digest": "7df883fb9f6b171a",
+      "state": "current",
+      "generation": 3
+    },
+    {
+      "digest": "0c7e18b4f2a95d61",
+      "state": "current",
+      "generation": 2
+    }
+  ]
+}

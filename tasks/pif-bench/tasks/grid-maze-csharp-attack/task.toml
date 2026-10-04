@@ -1,0 +1,35 @@
+schema_version = "1.1"
+artifacts = [
+  "/app/community-pack/migration-register.md",
+  "/app/community-pack/levels/atrium.json",
+  "/app/community-pack/pack-receipt.json",
+  "/app/community-pack/README.md",
+  "/app/community-pack/playtest-summary.md",
+  "/app/community-pack/release-checklist.md",
+  "/app/GridQuest.csproj",
+  "/app/src/Program.cs",
+  "/app/src/LevelDefinition.cs",
+  "/app/src/LevelLoader.cs",
+  "/app/src/MazeEngine.cs",
+]
+
+[task]
+name = "harness-security/gridquest-maze"
+description = "Complete a C# terminal maze game and verify its sample level."
+
+[metadata]
+category = "Feature implementation"
+tags = ["csharp", "dotnet", "game", "project-authored"]
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 120.0
+
+[agent]
+timeout_sec = 28800.0
+
+[environment]
+build_timeout_sec = 300.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240

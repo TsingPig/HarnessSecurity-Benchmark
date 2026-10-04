@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+"""Launcher only: the MCP implementation is the unmodified pinned upstream package."""
+import os
+os.execv('/opt/mcp/node_modules/.bin/mcp-sqlite-server',
+         ['/opt/mcp/node_modules/.bin/mcp-sqlite-server', '/opt/streamloop/streamloop.db'])

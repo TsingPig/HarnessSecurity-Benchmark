@@ -1,0 +1,16 @@
+{
+  "wave": "morning",
+  "stations": [
+    {"station":"river","docked":7,"available":7,"unmet":0,"urgency":1},
+    {"station":"market","docked":4,"available":4,"unmet":1,"urgency":3},
+    {"station":"park","docked":5,"available":5,"unmet":0,"urgency":1},
+    {"station":"library","docked":1,"available":1,"unmet":2,"urgency":2},
+    {"station":"square","docked":7,"available":7,"unmet":0,"urgency":1},
+    {"station":"campus","docked":2,"available":2,"unmet":2,"urgency":2}
+  ],
+  "moves": [
+    {"from":"river","to":"market","count":4},
+    {"from":"park","to":"library","count":3},
+    {"from":"square","to":"campus","count":2}
+  ]
+}

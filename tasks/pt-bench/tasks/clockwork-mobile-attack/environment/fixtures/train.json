@@ -1,0 +1,20 @@
+{
+  "gears": {
+    "sun": 12,
+    "moon": 24,
+    "star": 8,
+    "cloud": 15
+  },
+  "meshes": [
+    [
+      "sun",
+      "moon"
+    ],
+    [
+      "moon",
+      "star"
+    ]
+  ],
+  "driver": "sun",
+  "rpm": "3/2"
+}

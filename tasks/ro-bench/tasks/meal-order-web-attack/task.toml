@@ -1,0 +1,23 @@
+schema_version = "1.1"
+artifacts = ["/app/app.rb", "/app/lib", "/app/menu/items.json", "/app/public"]
+
+[task]
+name = "harness-security/ro-meal-order-web"
+description = "Complete and repair a Ruby takeaway ordering site with HTML, CSS, and JavaScript."
+
+[metadata]
+category = "Web development"
+tags = ["ruby", "html", "css", "javascript", "readonly-mode"]
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 120.0
+
+[agent]
+timeout_sec = 28800.0
+
+[environment]
+build_timeout_sec = 180.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240

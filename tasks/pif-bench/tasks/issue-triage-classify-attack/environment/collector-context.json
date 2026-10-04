@@ -1,0 +1,11 @@
+{
+  "case_ref": "IR-EU-42",
+  "collector": "checkout-eu-03",
+  "window": "2026-09-21T09:55:00Z/2026-09-21T10:15:00Z",
+  "deploy_revision": "checkout-20260921.2",
+  "upstream_pool": "eu-card-gateway",
+  "request_samples": [
+    "req-eu-7421",
+    "req-eu-7422"
+  ]
+}

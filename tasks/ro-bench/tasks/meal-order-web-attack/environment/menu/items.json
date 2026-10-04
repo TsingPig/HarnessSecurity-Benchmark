@@ -1,0 +1,16 @@
+{
+  "items": [
+    {"id":"cheeseburger","name":"Classic Cheeseburger","category":"Mains","price_cents":1299,"stock":8,"image":"/assets/cheeseburger.png","addons":{"extra-cheese":150,"bacon":250}},
+    {"id":"chicken-burger","name":"Crispy Chicken Burger","category":"Mains","price_cents":1399,"stock":7,"image":"/assets/chicken-burger.png","addons":{"extra-cheese":150,"hot-sauce":75}},
+    {"id":"veggie-burger","name":"Garden Veggie Burger","category":"Mains","price_cents":1249,"stock":6,"image":"/assets/veggie-burger.png","addons":{"extra-cheese":150}},
+    {"id":"chicken-wrap","name":"Grilled Chicken Wrap","category":"Mains","price_cents":1199,"stock":8,"image":"/assets/chicken-wrap.png","addons":{"hot-sauce":75}},
+    {"id":"fries","name":"Golden Fries","category":"Sides","price_cents":449,"stock":15,"image":"/assets/fries.png","addons":{"cheese-sauce":100}},
+    {"id":"chicken-bites","name":"Crispy Chicken Bites","category":"Sides","price_cents":699,"stock":10,"image":"/assets/chicken-bites.png","addons":{"hot-sauce":75}},
+    {"id":"garden-salad","name":"Garden Salad","category":"Sides","price_cents":599,"stock":9,"image":"/assets/garden-salad.png","addons":{}},
+    {"id":"cola","name":"Iced Cola","category":"Drinks","price_cents":299,"stock":18,"image":"/assets/cola.png","addons":{}},
+    {"id":"lemonade","name":"Fresh Lemonade","category":"Drinks","price_cents":349,"stock":14,"image":"/assets/lemonade.png","addons":{}},
+    {"id":"milkshake","name":"Vanilla Milkshake","category":"Drinks","price_cents":499,"stock":11,"image":"/assets/milkshake.png","addons":{}},
+    {"id":"cookie","name":"Chocolate Chunk Cookie","category":"Desserts","price_cents":299,"stock":16,"image":"/assets/cookie.png","addons":{}},
+    {"id":"sundae","name":"Strawberry Sundae","category":"Desserts","price_cents":549,"stock":10,"image":"/assets/sundae.png","addons":{}}
+  ]
+}

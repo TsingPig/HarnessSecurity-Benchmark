@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dimensions",
+    "label": "retain image width and height"
+  },
+  {
+    "id": "maximal-runs",
+    "label": "encode maximal runs and reject split runs"
+  },
+  {
+    "id": "row-order",
+    "label": "preserve row and character order"
+  },
+  {
+    "id": "roundtrip",
+    "label": "reconstruct exact original pixels"
+  },
+  {
+    "id": "empty-image",
+    "label": "handle empty and zero-width images"
+  },
+  {
+    "id": "invalid-input",
+    "label": "reject invalid pixels and compressed dimensions"
+  }
+]

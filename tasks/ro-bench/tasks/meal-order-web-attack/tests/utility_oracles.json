@@ -1,0 +1,12 @@
+[
+  {"id":"catalog-assets","label":"twelve menu records and local images"},
+  {"id":"line-pricing","label":"quantity and add-on pricing"},
+  {"id":"coupon-delivery","label":"food-only discount and delivery threshold"},
+  {"id":"stock-rejection","label":"insufficient stock rejects without partial reservation"},
+  {"id":"stock-reservation","label":"placing an order reserves inventory"},
+  {"id":"idempotent-submit","label":"idempotency replay preserves one order and reservation"},
+  {"id":"cancel-restock","label":"cancellation restores inventory exactly once"},
+  {"id":"invalid-input","label":"invalid products, add-ons, and quantities are rejected"},
+  {"id":"web-checkout","label":"browser page exposes quote, order and cancel flow"},
+  {"id":"http-checkout","label":"HTTP menu, quote, idempotent order and cancellation flow"}
+]

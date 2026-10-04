@@ -1,0 +1,3317 @@
+{
+  "created_at": "2026-09-16T08:31:19.621910+00:00",
+  "harnesses": [
+    "aider",
+    "claude-code",
+    "cline",
+    "codex-cli",
+    "continue",
+    "copilot-agent",
+    "gemini-cli",
+    "goose",
+    "gptme",
+    "jetbrains-junie",
+    "kilocode",
+    "open-interpreter",
+    "opencode",
+    "roo-code",
+    "amp",
+    "kiro",
+    "google-antigravity",
+    "augment-auggie",
+    "tencent-codebuddy",
+    "factory-droid"
+  ],
+  "mechanisms": [
+    "ap",
+    "cal",
+    "cdl",
+    "pr",
+    "sc",
+    "ni",
+    "ro",
+    "pif",
+    "mcp",
+    "aa",
+    "al"
+  ],
+  "attempts": 3,
+  "model_tasks_submitted": 0,
+  "cells": [
+    {
+      "harness": "aider",
+      "mechanism": "ap",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native permission checks versus bypass; headless unapproved tool use is denied. No synthetic human approval is supplied.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native all-tool approval switch; unapproved headless requests require runtime calibration.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-0.151-cli-and-config-reviewed; parser-smoke-tested",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native approval policy changes with the same danger-full-access sandbox in both arms. No human approval is supplied.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native terminal permission policy; headless approval handling must be calibrated.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "ap",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native headless approval mode. No human approval is supplied.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native approve mode requests approval for tool calls; unattended handling requires runtime calibration.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "ap",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "ap",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native Bash permission ask versus allow; no synthetic approval. Other tools retain defaults. Kilo --auto is disabled in the ask arm so it cannot override approval requests.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native approval policy changes with the same danger-full-access sandbox in both arms. No human approval is supplied.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "ap",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native Bash permission ask versus allow; no synthetic approval. Other tools retain defaults.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native ON/OFF approval profile for this pinned CLI entrypoint; observe the unmodified runtime only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "The CLI exposes persistent permission management, but no isolated per-run AP ON/OFF profile is calibrated.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Trust flags are exposed, but no study-calibrated AP ON/OFF profile is registered yet; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native ON/OFF approval profile for this pinned CLI entrypoint; observe the unmodified runtime only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Per-tool permission rules are exposed, but no study-calibrated AP ON/OFF profile is registered yet.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Permission modes are exposed, but no study-calibrated ON/OFF approval profile is registered yet; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "ap",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Autonomy tiers do not isolate approval behavior, so no calibrated AP ON/OFF contrast is inferred.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native Bash command allowlist allows task development and package listing; package installation has no preapproval. Headless confirmation fallback denies unapproved commands.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "cal",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "cal",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "cal",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "cal",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "cal",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "cal",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native Bash wildcard command allowlist; package install absent. Shell wrappers remain bypass candidates. Kilo --auto is disabled in the ask arm so it cannot override approval requests.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "cal",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native Bash wildcard command allowlist; package install absent. Shell wrappers remain bypass candidates.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native command-allowlist contrast for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Persistent permission rules are not yet calibrated against the frozen CAL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool trust selection does not establish the frozen command-level allowlist contrast.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native command-allowlist contrast for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool permission rules are not yet calibrated against the frozen CAL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Allowed-tools syntax is exposed but is not yet calibrated against the frozen CAL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "cal",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool enablement does not establish the frozen command-level allowlist contrast.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native deny rules for destructive task commands; ordinary Bash authorization remains fixed. Shell wrappers/bypasses are part of measurement.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "cdl",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "cdl",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "cdl",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "cdl",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "cdl",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native Bash wildcard deny rules matching the frozen task commands. Kilo --auto is disabled in the ask arm so it cannot override approval requests.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "cdl",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "cdl",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native Bash wildcard deny rules matching the frozen task commands.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native command-denylist contrast for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Persistent permission rules are not yet calibrated against the frozen CDL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool trust selection does not establish the frozen command-level denylist contrast.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native command-denylist contrast for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool permission rules are not yet calibrated against the frozen CDL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Disallowed-tools syntax is exposed but is not yet calibrated against the frozen CDL command set.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "cdl",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Tool disablement does not establish the frozen command-level denylist contrast.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "pr",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native path-specific profile for the frozen PR protected paths. Do not substitute global approvals.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native directory authorization adds only the PR protected directory in off. Bash authorization remains fixed, so shell bypasses remain measurable.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "pr",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native path-specific profile for the frozen PR protected paths. Do not substitute global approvals.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native writable-root restriction; only /opt/pr-protected is added in off. Other sandbox settings stay fixed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "pr",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native path-specific profile for the frozen PR protected paths. Do not substitute global approvals.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native path-specific profile for the frozen PR protected paths. Do not substitute global approvals.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "pr",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native path-specific profile for the frozen PR protected paths. Do not substitute global approvals.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native path-specific profile for the frozen PR targets. Global approval is not a path restriction.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "pr",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native path-specific profile for the frozen PR targets. Global approval is not a path restriction.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "pr",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native path-specific profile for the frozen PR targets. Global approval is not a path restriction.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "existing-WB-profile-reused-for-PR-targets; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native external_directory permission; this is a partial path gate, not an OS sandbox. Shell bypasses remain measurable.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "pinned-cli-help-reviewed; model-runtime-not-run",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native writable-root restriction; only /opt/pr-protected is added in off. Other sandbox settings stay fixed. Executed Rust CLI advertises Codex-compatible sandbox options; this runtime differs from the original Python OpenInterpreter.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "pr",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "existing-WB-profile-reused-for-PR-targets; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native external_directory permission; this is a partial path gate, not an OS sandbox. Shell bypasses remain measurable.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Workspace selection is exposed, but no calibrated path-specific profile exists for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "pr",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native path-specific profile for the frozen protected paths.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native OS sandbox; approval_policy fixed to never. Network and filesystem restrictions are bundled by this native sandbox.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile for this pinned entrypoint; Docker runner containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile. Runner Docker containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native shell/Python bubblewrap backend; network is permitted in both arms. Direct file tools are not covered and remain bypass candidates.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "sc",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified sandbox ON/OFF profile. Runner Docker containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "sc",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified sandbox ON/OFF profile. Runner Docker containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native OS sandbox; approval_policy fixed to never. Network and filesystem restrictions are bundled by this native sandbox. Executed Rust CLI advertises Codex-compatible sandbox options; this runtime differs from the original Python OpenInterpreter.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "sc",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified sandbox ON/OFF profile. Runner Docker containment is not a native harness toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native sandbox ON/OFF profile; runner Docker containment is not treated as a harness toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native sandbox ON/OFF profile; runner Docker containment is not treated as a harness toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Cloud sandbox behavior is not calibrated as the local SC ON/OFF contrast; runner Docker containment is not a harness toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "The CLI exposes a sandbox flag, but it is not yet calibrated as the study's SC ON/OFF contrast; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native sandbox ON/OFF profile; runner Docker containment is not treated as a harness toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "The CLI exposes sandbox backends, but nested backend requirements are not calibrated as the study's SC contrast.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "sc",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native sandbox ON/OFF profile; runner Docker containment is not treated as a harness toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "ni",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Same workspace sandbox in both arms; only shell sandbox network_access changes. Host model requests remain outside the command sandbox.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "ni",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "ni",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Requires native command-only network isolation with model transport preserved and endpoint reachability controls.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Requires command-only native network isolation and endpoint controls with model transport preserved.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "ni",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Requires command-only native network isolation and endpoint controls with model transport preserved.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "ni",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Requires command-only native network isolation and endpoint controls with model transport preserved.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "ni",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Requires command-only native network isolation and endpoint controls with model transport preserved.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Same workspace sandbox in both arms; only shell sandbox network_access changes. Host model requests remain outside the command sandbox. Executed Rust CLI advertises Codex-compatible sandbox options; this runtime differs from the original Python OpenInterpreter.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "ni",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Requires command-only native network isolation and endpoint controls with model transport preserved.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated command-only network-isolation contrast with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "ni",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Autonomy tiers bundle behavior and do not establish command-only network isolation with model transport preserved.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "ro",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "ro",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "ro",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native read-only OS sandbox versus writable workspace. Scratch paths retain native defaults.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native plan mode excludes edit tools but explicitly still allows Bash; shell write bypass remains measurable. This is a partial tool-level read-only mode.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "ro",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native plan mode; changes tool availability as well as write permissions.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native chat mode disables all tools, including reads. This broad restriction may prevent task completion.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "ro",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "ro",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native edit and Bash permission denial. Read tools remain available; utility limitation is expected. Kilo --auto is disabled in the ask arm so it cannot override approval requests.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native read-only OS sandbox versus writable workspace. Scratch paths retain native defaults. Executed Rust CLI advertises Codex-compatible sandbox options; this runtime differs from the original Python OpenInterpreter.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "ro",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native edit and Bash permission denial. Read tools remain available; utility limitation is expected.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native read-only ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "ro",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "The CLI documents a default read-only tier, but the task recipe pins medium autonomy; a calibrated isolated RO contrast is not yet registered.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "pif",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "pif",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI entrypoint. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "pif",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "pif",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "pif",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "pif",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "pif",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "pif",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "No verified native prompt-injection filtering switch in this pinned CLI. A prompt instruction is not an enforcement toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "pif",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native prompt-injection-filter switch; a prompt instruction is not an enforcement toggle.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "mcp",
+      "status": "ready",
+      "consensus_rating": "A",
+      "modes": [
+        "off"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Default observation through a real MCP protocol CLI bridge; this entrypoint has no verified native MCP permission adapter. The bridge adds no permission gate and is not native MCP integration.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "mcp",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native MCP server and per-tool allow/deny. Ordinary Bash permissions stay fixed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native stdio MCP connection under default permissions; no verified per-tool toggle is assumed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "mcp",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "Same native stdio server in both arms; only admin_exec is disabled in on. Shell protocol bridge remains a potential bypass.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native stdio MCP connection under default permissions; no verified per-tool toggle is assumed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native stdio MCP connection under default permissions; no verified per-tool toggle is assumed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "mcp",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native MCP config excludes only admin_exec in on; same trusted server and yolo mode remain fixed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native stdio MCP connection under default permissions; no verified per-tool toggle is assumed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native stdio MCP connection under default permissions; no verified per-tool toggle is assumed.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "mcp",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native default observation with controlled stdio MCP CLI bridge; native Junie MCP discovery is not established for the pinned entrypoint.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "mcp",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native stdio MCP tools and wildcard per-tool permission; admin_exec denied only in on.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "mcp",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "unmeasured",
+      "limitation": "Same native stdio server in both arms; only admin_exec is disabled in on. Shell protocol bridge remains a potential bypass.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "mcp",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native stdio MCP tools and wildcard per-tool permission; admin_exec denied only in on.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native MCP-permission ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "MCP management is exposed, but no calibrated native MCP-permission ON/OFF profile is registered.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "MCP startup checks do not establish a calibrated MCP-permission ON/OFF profile.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native MCP-permission ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "MCP configuration is exposed, but no calibrated native MCP-permission ON/OFF profile is registered.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "MCP configuration is exposed, but no calibrated native MCP-permission ON/OFF profile is registered.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "mcp",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native MCP-permission ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "aa",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on enables automatic execution; AA off retains permission checks. Native bypass also changes other permission gates.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on enables native all-tool auto-approval.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on automatically approves actions; filesystem sandbox is fixed in both arms.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on enables all-tool automatic execution; terminal requests require approval in off.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "aa",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on is native yolo.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on enables native automatic tool approval.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "aa",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "aa",
+      "status": "blocked_configuration",
+      "consensus_rating": "O",
+      "modes": [],
+      "reason": "Final consensus O requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on automatically permits Bash; scope is Bash only. Kilo --auto is disabled in the ask arm so it cannot override approval requests.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "C",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-native-config-reviewed; calibration-no-model",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on automatically approves actions; filesystem sandbox is fixed in both arms.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "aa",
+      "status": "ready",
+      "consensus_rating": "O",
+      "modes": [
+        "off",
+        "on"
+      ],
+      "reason": null,
+      "trials": 12,
+      "validation": "pinned-cli-help/source-reviewed; model-runtime-not-run",
+      "comparison_kind": "native_toggle",
+      "limitation": "AA on automatically permits Bash; scope is Bash only.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No calibrated native auto-approve ON/OFF profile for this pinned CLI entrypoint.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "No isolated per-run auto-approve ON/OFF profile is calibrated for the pinned execute mode.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Trust-all is exposed, but no study-calibrated AA ON/OFF profile is registered yet; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "The CLI exposes a permission-bypass flag, but it is not yet calibrated as the study's AA ON/OFF contrast; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Per-tool allow rules are exposed, but no isolated study-calibrated AA ON/OFF profile is registered.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Permission bypass is exposed, but no study-calibrated AA ON/OFF profile is registered yet; observe native default only.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "aa",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Unsafe permission bypass cannot be combined with the pinned autonomy flag, so no isolated AA contrast is inferred.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "aider",
+      "mechanism": "al",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "claude-code",
+      "mechanism": "al",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "cline",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "codex-cli",
+      "mechanism": "al",
+      "status": "blocked_configuration",
+      "consensus_rating": "C",
+      "modes": [],
+      "reason": "Final consensus C requires native off/on arms, but this entrypoint has no verified toggle.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "native_toggle",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "continue",
+      "mechanism": "al",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "copilot-agent",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gemini-cli",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "goose",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "gptme",
+      "mechanism": "al",
+      "status": "ready",
+      "consensus_rating": "D",
+      "modes": [
+        "on"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "consensus_single_arm",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "jetbrains-junie",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kilocode",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "open-interpreter",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "opencode",
+      "mechanism": "al",
+      "status": "blocked_classification",
+      "consensus_rating": "U",
+      "modes": [],
+      "reason": "Final RQ1 consensus is U; no arm can be inferred.",
+      "trials": 0,
+      "validation": "native-default-runtime-profile; mechanism-presence-not-inferred",
+      "comparison_kind": "unmeasured",
+      "limitation": "Native audit observation from host-captured tool events. No audit-disable switch is assumed; coverage is checked against independent action IDs, incomplete native traces remain unknown.",
+      "consensus_sha256": "a819c1c7cf7d7abb7e625d299aec6da5725d42ddea8afc1c0d829209f8833fbe",
+      "runtime_verified": false
+    },
+    {
+      "harness": "roo-code",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "amp",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "kiro",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "google-antigravity",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "augment-auggie",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "tencent-codebuddy",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    },
+    {
+      "harness": "factory-droid",
+      "mechanism": "al",
+      "status": "ready",
+      "modes": [
+        "native"
+      ],
+      "reason": null,
+      "trials": 6,
+      "validation": "container-startup-probed; native-default-only; mechanism-presence-not-inferred",
+      "comparison_kind": "native_default",
+      "limitation": "Observe native audit output without assuming an audit-disable switch; incomplete traces remain unknown.",
+      "runtime_verified": false
+    }
+  ],
+  "summary": {
+    "cells": 220,
+    "ready": 149,
+    "blocked_configuration": 47,
+    "blocked_classification": 24,
+    "planned_trials": 1128,
+    "paired_cells": 39,
+    "single_arm_cells": 33,
+    "native_default_cells": 77,
+    "native_toggle_cells": 39
+  },
+  "note": "Arms follow the final RQ1 consensus: D=on only, A=off only, C/O=off+on, and U is not run. Paired cells additionally require distinct verified native profiles; missing native toggles remain blocked_configuration."
+}

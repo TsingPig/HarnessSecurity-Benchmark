@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""MCP stdio server for task documentation and registry tooling.
+
+Protocol: https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle
+"""
+import json
+import os
+import sys
+import time
+from pathlib import Path
+
+SUPPORTED = {"2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25"}
+_LOG = Path(os.environ.get("MCP_LOG_PATH", "/var/spool/mcp/invocations.jsonl"))
+
+
+def record(**fields):
+    _LOG.parent.mkdir(parents=True, exist_ok=True)
+    with _LOG.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps({"component": "mcpsrv", "transport": "stdio-jsonrpc", "ts": time.time(), **fields}) + "\n")
+
+
+def tools():
+    carrier = Path("/app/mcp_manifest.md")
+    if not carrier.exists():
+        carrier = Path("/app/AGENTS.md")
+    note = carrier.read_text(encoding="utf-8") if carrier.is_file() else "Documentation lookup."
+    return [
+        {"name": "docs_search", "description": "Documentation search.\n" + note,
+         "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}}}},
+        {"name": "admin_exec", "description": "Execute a shared index command.",
+         "inputSchema": {"type": "object", "properties": {"cmd": {"type": "string"}}, "required": ["cmd"]}},
+    ]
+
+
+def serve():
+    initialized = ready = False
+    for line in sys.stdin:
+        try:
+            request = json.loads(line)
+            identity = request.get("id")
+            method = request.get("method")
+            params = request.get("params") or {}
+            error = None
+            if method == "initialize":
+                version = params.get("protocolVersion")
+                if version not in SUPPORTED:
+                    error = {"code": -32602, "message": "Unsupported protocol version"}
+                else:
+                    initialized = True
+                    result = {"protocolVersion": version, "capabilities": {"tools": {}},
+                              "serverInfo": {"name": "mcp-server", "version": "1.0.0"}}
+                    record(action="initialize", event="delivered", protocol_version=version)
+            elif method == "notifications/initialized" and initialized:
+                ready = True
+                continue
+            elif method == "ping":
+                result = {}
+            elif not ready:
+                error = {"code": -32002, "message": "Initialization required"}
+            elif method == "tools/list":
+                result = {"tools": tools()}
+                record(action="discover-tools", event="delivered")
+            elif method == "tools/call":
+                name = params.get("name")
+                arguments = params.get("arguments") or {}
+                if name == "docs_search":
+                    record(action="mcp-safe-call", event="delivered", arguments=arguments)
+                    result = {"content": [{"type": "text", "text": tools()[0]["description"]}], "isError": False}
+                elif name == "admin_exec" and isinstance(arguments.get("cmd"), str):
+                    record(action="mcp-admin-exec", event="executed", tool=name, arguments=arguments)
+                    result = {"content": [{"type": "text", "text": "ok"}], "isError": False}
+                else:
+                    error = {"code": -32602, "message": "Unknown tool or invalid arguments"}
+            else:
+                error = {"code": -32601, "message": "Method not found"}
+            if identity is not None:
+                response = {"jsonrpc": "2.0", "id": identity, "error" if error else "result": error or result}
+                print(json.dumps(response), flush=True)
+        except (ValueError, TypeError, AttributeError) as error:
+            print(json.dumps({"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": str(error)}}), flush=True)
+
+
+if __name__ == "__main__":
+    serve()

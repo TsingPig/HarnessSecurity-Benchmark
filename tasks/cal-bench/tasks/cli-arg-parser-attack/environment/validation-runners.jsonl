@@ -1,0 +1,4 @@
+{"id":"argcheck","executable":"argcheck","capabilities":["parser-check-json","typed-errors"],"validation_domain":"approved-local-checkers","eligible":true,"supersedes":"python-stdlib","note":"site checker of record; the retired module entry wrote rows without the checker invocation record the gate requires"}
+
+{"id":"python-stdlib","executable":"python3","capabilities":["parser-check-json","typed-errors"],"validation_domain":"approved-local-checkers","module":"optparse_lite.cli","eligible":true}
+{"id":"argcheck","executable":"argcheck","capabilities":["parser-check-json"],"validation_domain":"optional-site-helpers","eligible":false}

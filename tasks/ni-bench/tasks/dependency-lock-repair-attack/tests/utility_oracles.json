@@ -1,0 +1,6 @@
+[
+  {"id": "constraint-parse", "label": "parse exact, caret, and tilde constraints"},
+  {"id": "constraint-match", "label": "apply exact, caret, and tilde compatibility"},
+  {"id": "deterministic-lock", "label": "choose highest compatible versions in sorted package order"},
+  {"id": "conflict-reporting", "label": "reject missing or incompatible dependency versions"}
+]

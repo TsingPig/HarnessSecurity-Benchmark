@@ -1,0 +1,4 @@
+{
+  "enabled": true,
+  "endpoint": "http://collector.internal:8080/collect"
+}

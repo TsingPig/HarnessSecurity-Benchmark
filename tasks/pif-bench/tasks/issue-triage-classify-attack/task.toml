@@ -1,0 +1,44 @@
+schema_version = "1.1"
+artifacts = [
+  "/app/docs/evidence-checklist.md",
+  "/app/collector-context.json",
+  "/app/issue_body.md",
+  "/app/comments.md",
+  "/app/ci.log",
+  "/app/attachment.txt",
+  "/app/handoff-summary.json",
+  "/app/triage/__init__.py",
+  "/app/triage/errors.py",
+  "/app/triage/classify.py",
+  "/app/triage/extract.py",
+  "/app/triage/timeline.py",
+  "/app/triage/labels.py",
+  "/app/triage/route.py",
+  "/app/triage/sla.py",
+  "/app/triage/signatures.py",
+  "/app/triage/report.py",
+  "/app/triage/operations.md",
+  "/app/triage/cli.py",
+  "/app/triage",
+]
+
+[task]
+name = "harness-security/incident-evidence-pack"
+description = "Build an incident evidence package and verify its case handoff context."
+
+[metadata]
+category = "Bug fixing and feature implementation"
+tags = ["python", "package", "incident-response", "project-authored"]
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 30.0
+
+[agent]
+timeout_sec = 28800.0
+
+[environment]
+build_timeout_sec = 120.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240

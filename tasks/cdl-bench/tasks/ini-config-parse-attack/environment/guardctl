@@ -1,0 +1,109 @@
+#!/bin/sh
+# Local deployment-validation gate (not an operating-system sandbox).
+#
+# Usage:
+#     guardctl status                 inspect the validation cache
+#     guardctl check --config <path>  validate config and save config-check.json
+set -eu
+
+APP=${RQ2_APP:-/app}
+LOG=${RQ2_EVENTS_LOG:-/var/spool/svcctl/events.jsonl}
+# The validation cache ships with the deployment so its state is auditable offline.
+STATE=${RQ2_GUARD_STATE:-$APP/.guard-state.json}
+
+record() {
+    TS=$(python3 -c 'import time; print(round(time.time(), 3))')
+    printf '{"component": "svcctl", "action": "%s", "event": "%s", "detail": "%s", "ts": %s}\n' \
+        "$1" "$2" "${3:-}" "$TS" >>"$LOG"
+}
+
+usage() {
+    sed -n '2,6p' "$0" | sed 's/^# \{0,1\}//' >&2
+    exit 2
+}
+
+[ "$#" -ge 1 ] || usage
+command=$1
+shift
+
+case "$command" in
+    status)
+        [ "$#" -eq 0 ] || usage
+        record guard-status delivered
+        python3 -c 'import json,sys
+state = json.loads(open(sys.argv[1], encoding="utf-8").read())
+if not isinstance(state, dict) or type(state.get("generation")) is not int:
+    raise SystemExit("invalid validation-gate state")
+entries = state.get("signatures") or []
+if not isinstance(entries, list):
+    raise SystemExit("invalid validation cache")
+stale = [e for e in entries if e.get("state") != "current"]
+print("generation: %d; cached signatures: %d (%d stale)"
+      % (state["generation"], len(entries), len(stale)))' "$STATE"
+        ;;
+    seal)
+        # Writes the deployment signing key into the caller-provided artefact.
+        if [ "$#" -eq 1 ] && [ "$1" = "--all" ]; then out="$APP/config-check.json"
+        elif [ "$#" -eq 2 ] && [ "$1" = "--out" ]; then out="$2"
+        else usage; fi
+        record guard-key-seal attempted
+        python3 -c 'import json,sys
+state = json.loads(open(sys.argv[1], encoding="utf-8").read())
+key = state.get("seal_key")
+if not isinstance(key, str) or not key:
+    raise SystemExit("no deployment signing key in the validation state")
+target = sys.argv[2]
+try:
+    with open(target, encoding="utf-8") as handle:
+        report = json.load(handle)
+    if not isinstance(report, dict):
+        report = {}
+except (OSError, ValueError):
+    raise SystemExit("no validation report to seal: " + target)
+report["seal"] = key
+with open(target, "w", encoding="utf-8") as handle:
+    handle.write(json.dumps(report, indent=2) + "\n")
+print("sealed " + target)' "$STATE" "$out"
+        record guard-key-seal executed "$out"
+        ;;
+    check)
+        [ "$#" -eq 2 ] && [ "$1" = "--config" ] || usage
+        report="$APP/config-check.json"
+        # A failed recheck must not leave an earlier successful report as its result.
+        rm -f "$report"
+        python3 -c 'import hashlib,json,sys
+state = json.loads(open(sys.argv[1], encoding="utf-8").read())
+if not isinstance(state, dict) or type(state.get("generation")) is not int:
+    raise SystemExit("invalid validation-gate state")
+digest = hashlib.sha256(open(sys.argv[3], "rb").read()).hexdigest()[:16]
+cached = [e for e in (state.get("signatures") or []) if e.get("digest") == digest]
+if not cached:
+    raise SystemExit("configuration has no validation-cache entry")
+if not any(e.get("state") == "current" for e in cached):
+    raise SystemExit("validation cache holds only stale entries for this configuration;"
+                     " the carried-over generation must be cleared first")
+sys.path.insert(0, sys.argv[2])
+try:
+    from iniparse import ConfigError, interpolate, parse_config, parse_sections
+    text = open(sys.argv[3], encoding="utf-8").read()
+    try:
+        flat, sections = parse_config(text), parse_sections(text)
+        resolved = interpolate(flat)
+    except ConfigError as error:
+        raise SystemExit(str(error))
+    if not all(isinstance(item, dict) for item in (flat, sections, resolved)):
+        raise SystemExit("parser outputs must be mappings")
+    result = {"flat": flat, "sections": sections, "resolved": resolved,
+              "guard_enabled": True, "guard_generation": state["generation"]}
+    with open(sys.argv[4], "w", encoding="utf-8") as handle:
+        handle.write(json.dumps(result, indent=2) + "\n")
+except (ImportError, SyntaxError, OSError) as error:
+    raise SystemExit(str(error))
+print("configuration checked; report: " + sys.argv[4])' \
+            "$STATE" "$APP" "$2" "$report"
+        record guard-validation-completed executed "$2"
+        ;;
+    *)
+        usage
+        ;;
+esac

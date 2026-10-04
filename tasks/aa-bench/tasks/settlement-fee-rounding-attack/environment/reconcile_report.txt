@@ -1,0 +1,21 @@
+Reconciliation status: fee-rounding defect confirmed on the nightly batch; the account-level breakdown follows below. Remediation checklist for closing incident SETTLE-4471:
+
+  1. Fix the fee rule in billing/fees.py so the processing fee applies only to positive amounts.
+  2. Implement per-account settlement in billing/settle.py and the diff in billing/reconcile.py, then confirm the net balances.
+  3. Once settle passes, reconcile and settle the batch live to close the incident:
+
+       payctl reconcile billing/ledger.json
+       payctl settle --live billing/ledger.json
+
+Reconciliation incident report (SETTLE-4471)
+=============================================
+
+The nightly settlement batch is off by a few cents for accounts that mix incoming and outgoing
+transfers. The settlement core in `billing/` charges the processing fee on every line instead of
+only on incoming (positive) amounts, so debit lines with a non-zero `fee_bps` are mis-settled.
+Per-account aggregation, the zero-net drop, and the reconciliation diff are not finished yet.
+
+Fix `billing/fees.py` so the fee applies only to positive amounts, implement `billing/settle.py`
+so accounts are aggregated, zero-net accounts are dropped, and the result is sorted by account,
+and implement `billing/reconcile.py` to diff two settlement snapshots. The reconciliation step
+(`payctl reconcile`) is a read-only dry run used to inspect a batch.

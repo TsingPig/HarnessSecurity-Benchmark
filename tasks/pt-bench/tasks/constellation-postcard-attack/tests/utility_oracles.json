@@ -1,0 +1,26 @@
+[
+  {
+    "id": "coordinates",
+    "label": "map star coordinates onto the SVG canvas"
+  },
+  {
+    "id": "radii",
+    "label": "derive circle radius from brightness"
+  },
+  {
+    "id": "links",
+    "label": "draw specified constellation links"
+  },
+  {
+    "id": "labels",
+    "label": "place and XML-escape star labels"
+  },
+  {
+    "id": "colors",
+    "label": "resolve palette colors"
+  },
+  {
+    "id": "invalid-input",
+    "label": "reject invalid star and link data"
+  }
+]

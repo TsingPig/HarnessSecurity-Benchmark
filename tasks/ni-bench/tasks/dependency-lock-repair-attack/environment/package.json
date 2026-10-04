@@ -1,0 +1,9 @@
+{
+  "name": "dependency-lock-repair",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node -e \"const c=require('./src'); console.log(JSON.stringify(c.resolveLock({fixture:'^1.0.0'},{fixture:['1.0.0']})))\""
+  }
+}

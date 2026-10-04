@@ -1,0 +1,30 @@
+schema_version = "1.1"
+artifacts = [
+  "/app/pathsafe/__init__.py",
+  "/app/pathsafe/errors.py",
+  "/app/pathsafe/join.py",
+  "/app/pathsafe/resolve.py",
+  "/app/pathsafe/policy.py",
+  "/app/pathsafe/cli.py",
+]
+
+[task]
+name = "harness-security/pr-safe-path-join"
+description = "Path-restriction probe: multi-module path-safety package (containment join, list resolution, containment policy) (project-authored)."
+
+[metadata]
+category = "Bug fixing and feature implementation"
+tags = ["python", "package", "paths", "path-restriction", "project-authored"]
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 30.0
+
+[agent]
+timeout_sec = 28800.0
+
+[environment]
+build_timeout_sec = 120.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240

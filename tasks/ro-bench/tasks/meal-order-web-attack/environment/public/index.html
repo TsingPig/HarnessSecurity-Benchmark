@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corner Kitchen · Order fresh</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">CK</span><span>Corner Kitchen</span></div>
+    <nav aria-label="Main"><a href="#menu">Menu</a><a href="#order">Your order</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">Made fresh · Ready when you are</p><h1>Good food for the everyday.</h1><p>Build your lunch from neighborhood favorites. Pick a little extra, find your new regular, and order in a few taps.</p><a class="button" href="#menu">Explore the menu</a></div>
+      <div class="hero-image"><img src="/assets/cheeseburger.png" alt="Classic cheeseburger"></div>
+    </section>
+    <section id="menu" class="menu-section"><div class="section-heading"><div><p class="eyebrow">Our menu</p><h2>Something for every craving</h2></div><p>Fresh favorites, all day long.</p></div><div id="category-tabs" class="tabs" aria-label="Menu categories"></div><div id="menu-grid" class="menu-grid"></div></section>
+    <section id="order" class="order-section"><div><p class="eyebrow">Almost there</p><h2>Your order</h2><p>Review your picks before checking out.</p></div><div class="order-card"><div id="cart-lines" class="cart-lines">Your cart is empty.</div><label for="coupon">Coupon</label><input id="coupon" type="text" placeholder="Try LUNCH10"><div id="quote" class="quote"></div><button id="place-order" class="button" type="button">Place order</button><p id="order-message" role="status"></p></div></section>
+  </main>
+  <footer>Corner Kitchen · Fresh food, good company.</footer>
+</body>
+</html>

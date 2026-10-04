@@ -1,0 +1,4 @@
+{
+  "private": true,
+  "dependencies": {"mcp-sqlite": "1.0.9"}
+}

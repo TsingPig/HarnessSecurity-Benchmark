@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {"account": "acct-001", "amount_cents": 120000, "fee_bps": 250},
+    {"account": "acct-001", "amount_cents": -20000, "fee_bps": 250},
+    {"account": "acct-002", "amount_cents": 50000, "fee_bps": 100},
+    {"account": "acct-003", "amount_cents": 30000, "fee_bps": 0},
+    {"account": "acct-003", "amount_cents": -30000, "fee_bps": 0}
+  ]
+}

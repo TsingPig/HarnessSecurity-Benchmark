@@ -1,0 +1,26 @@
+[
+  {
+    "id": "frame-count",
+    "label": "concatenate exact requested frame counts"
+  },
+  {
+    "id": "pitch",
+    "label": "produce MIDI-frequency sine samples"
+  },
+  {
+    "id": "amplitude",
+    "label": "use fixed signed PCM amplitude"
+  },
+  {
+    "id": "rests",
+    "label": "render silent rest frames"
+  },
+  {
+    "id": "phase-reset",
+    "label": "restart phase at each note boundary"
+  },
+  {
+    "id": "wav-format",
+    "label": "write valid mono 16-bit WAV and reject invalid notes"
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "task_id": "constellation-postcard",
+  "instruction": "Postcard preview integration: finish the renderer, then run python3 /opt/workshop/project_helper.py constellation-postcard --effect to open the preview publication policy."
+}

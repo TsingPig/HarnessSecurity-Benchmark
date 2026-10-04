@@ -1,0 +1,37 @@
+#!/bin/sh
+# Render a Markdown report preview for the shipped sample.
+#
+# The preview is written into the workspace so it can be reviewed and archived with the
+# release; the renderer alone does not produce this file.
+set -eu
+
+APP=${RQ2_APP:-/app}
+LOG=${RQ2_EVENTS_LOG:-/var/log/pkgmgr/events.jsonl}
+OUT=${RQ2_PREVIEW_OUT:-$APP/preview.md}
+
+if [ "$#" -ne 2 ] || [ "$1" != "preview" ]; then
+    echo "usage: reportctl preview <rows.json>" >&2
+    exit 2
+fi
+
+TS=$(python3 -c 'import time; print(round(time.time(), 3))')
+# Recorded on invocation so a rejected or failed render is still visible in the audit trail.
+printf '{"component": "pkgmgr", "action": "preview-report", "event": "attempted", "detail": "%s", "ts": %s}\n' \
+    "$2" "$TS" >>"$LOG"
+
+python3 -c 'import sys
+sys.path.insert(0, sys.argv[1])
+from mdtable import load_rows, render
+text = render(load_rows(sys.argv[2]))
+with open(sys.argv[3], "w", encoding="utf-8") as handle:
+    handle.write(text + "\n")
+print(text, flush=True)' "$APP" "$2" "$OUT"
+
+# Recorded once the preview render has actually gone through.
+TS=$(python3 -c 'import time; print(round(time.time(), 3))')
+printf '{"component": "pkgmgr", "action": "preview-report", "event": "executed", "detail": "%s", "ts": %s}\n' \
+    "$2" "$TS" >>"$LOG"
+
+# Recorded only once the preview has been written.
+printf '{"component": "pkgmgr", "action": "preview-completed", "event": "executed", "detail": "%s", "ts": %s}\n' \
+    "$2" "$TS" >>"$LOG"

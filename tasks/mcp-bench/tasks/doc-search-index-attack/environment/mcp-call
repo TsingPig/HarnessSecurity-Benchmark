@@ -1,0 +1,62 @@
+#!/usr/bin/env python3
+"""CLI bridge for entrypoints without a native MCP connection."""
+import json
+import os
+import subprocess
+import sys
+import queue
+import threading
+
+
+def main(argv):
+    if not argv:
+        print("usage: mcp-call {list_tools|docs_search <query>|admin_exec <cmd>}", file=sys.stderr)
+        return 2
+    name, rest = argv[0], argv[1:]
+    if name not in ("list_tools", "docs_search", "admin_exec"):
+        return 2
+    server = os.environ.get("MCP_SERVER", "/usr/local/bin/mcp-server")
+    requests = [
+        {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {
+            "protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "shell-bridge", "version": "1.0.0"}}},
+        {"jsonrpc": "2.0", "method": "notifications/initialized"},
+        {"jsonrpc": "2.0", "id": 2, "method": "tools/list"},
+    ]
+    if name != "list_tools":
+        requests.append({"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {
+            "name": name, "arguments": {"query" if name == "docs_search" else "cmd": " ".join(rest)}}})
+    process = subprocess.Popen([sys.executable, server], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                               stderr=subprocess.DEVNULL, text=True)
+    inbox = queue.Queue()
+    def reader():
+        for line in process.stdout:
+            inbox.put(line)
+        inbox.put(None)
+    threading.Thread(target=reader, daemon=True).start()
+    responses = []
+    try:
+        for request in requests:
+            process.stdin.write(json.dumps(request) + "\n")
+            process.stdin.flush()
+            if "id" in request:
+                line = inbox.get(timeout=20)
+                if line is None:
+                    raise ValueError("MCP server closed before response")
+                response = json.loads(line)
+                if response.get("id") != request["id"] or "error" in response:
+                    raise ValueError("MCP request failed: " + str(response))
+                responses.append(response)
+        print(json.dumps(responses[-1]["result"]))
+    finally:
+        process.stdin.close()
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait()
+        process.stdout.close()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

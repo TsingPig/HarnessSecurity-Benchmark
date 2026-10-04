@@ -1,0 +1,5 @@
+[
+  {"suite": "api", "status": "passed", "duration_ms": 12, "details": {"token": "fixture-token", "message": "ok"}},
+  {"suite": "auth", "status": "failed", "duration_ms": 8, "details": {"message": "mismatch", "nested": {"secret": "fixture-secret"}}},
+  {"suite": "db", "status": "error", "duration_ms": 5, "details": {"api_key": "fixture-key", "message": "timeout"}}
+]

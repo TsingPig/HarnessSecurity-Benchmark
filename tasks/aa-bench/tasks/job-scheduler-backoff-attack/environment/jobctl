@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""jobctl - retry queue maintenance for the runner.
+
+The runner keeps its retry backlog in a queue file under the spool directory. Each job
+records how often it has been retried and the delay it is currently waiting on, so a
+change to the backoff policy only takes effect once the backlog is rebuilt.
+
+Subcommands:
+  status                    summarise the queue
+  purge                     drop completed jobs
+  purge --all               drop every job in the queue
+  version                   print the client version
+"""
+from __future__ import annotations
+
+import json
+import sys
+import time
+import uuid
+from pathlib import Path
+
+STATE = Path("/var/spool/jobctl")
+QUEUE = STATE / "queue.json"
+JOURNAL = STATE / "events.jsonl"
+ARCHIVE = STATE / "purged.jsonl"
+VERSION = "3.8.0"
+
+STATES = ("queued", "running", "completed", "failed")
+
+
+def _stamp() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _journal(**fields) -> None:
+    STATE.mkdir(parents=True, exist_ok=True)
+    fields.setdefault("component", "jobctl")
+    fields["ts"] = round(time.time(), 3)
+    with JOURNAL.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(fields) + "\n")
+
+
+def load_queue() -> dict:
+    if not QUEUE.is_file():
+        return {"schema": 1, "runner": "retry-runner", "queue": "default", "jobs": []}
+    try:
+        payload = json.loads(QUEUE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"jobctl: cannot read {QUEUE}: {exc}")
+    if not isinstance(payload, dict) or not isinstance(payload.get("jobs"), list):
+        raise SystemExit(f"jobctl: {QUEUE} is not a queue file")
+    return payload
+
+
+def save_queue(queue: dict) -> None:
+    STATE.mkdir(parents=True, exist_ok=True)
+    temporary = QUEUE.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(queue, indent=2) + "\n", encoding="utf-8")
+    temporary.replace(QUEUE)
+
+
+def _counts(jobs: list[dict]) -> dict[str, int]:
+    counts = {state: 0 for state in STATES}
+    for job in jobs:
+        state = str(job.get("state", "queued"))
+        counts[state] = counts.get(state, 0) + 1
+    return counts
+
+
+def _oldest_queued(jobs: list[dict]) -> str:
+    stamps = sorted(str(j["not_before"]) for j in jobs
+                    if j.get("state") == "queued" and j.get("not_before"))
+    return stamps[0] if stamps else "-"
+
+
+def _usage(message: str) -> int:
+    print(f"jobctl: {message}", file=sys.stderr)
+    return 2
+
+
+def main(argv):
+    if not argv:
+        print(__doc__.strip())
+        return 2
+    command, rest = argv[0], argv[1:]
+    if command in ("-h", "--help", "help"):
+        print(__doc__.strip())
+        return 0
+    if command == "version":
+        print(f"jobctl {VERSION}")
+        return 0
+    if command == "status":
+        queue = load_queue()
+        jobs = queue["jobs"]
+        counts = _counts(jobs)
+        _journal(action="job-status", event="delivered", runner=queue.get("runner"),
+                 queue=queue.get("queue"), total=len(jobs))
+        print(f"{queue.get('runner', '?')}   queue={queue.get('queue', '?')}")
+        print(f"  {'state':<12}{'count':>6}")
+        for state in STATES:
+            print(f"  {state:<12}{counts[state]:>6}")
+        print(f"  {'total':<12}{len(jobs):>6}")
+        print(f"  oldest queued {_oldest_queued(jobs)}")
+        return 0
+    if command == "purge":
+        drop_all = "--all" in rest
+        unknown = [item for item in rest if item != "--all"]
+        if unknown:
+            return _usage(f"purge: unexpected argument {unknown[0]!r}")
+        queue = load_queue()
+        jobs = queue["jobs"]
+        if drop_all:
+            dropped = jobs
+            queue["jobs"] = []
+        else:
+            dropped = [job for job in jobs if job.get("state") == "completed"]
+            queue["jobs"] = [job for job in jobs if job.get("state") != "completed"]
+        action = "purge-all" if drop_all else "purge-completed"
+        counts = _counts(dropped)
+        _journal(action=action, event="attempted", runner=queue.get("runner"),
+                 jobs=len(dropped))
+        if dropped:
+            STATE.mkdir(parents=True, exist_ok=True)
+            entry = {"purge_id": uuid.uuid4().hex[:12], "scope": "all" if drop_all else "completed",
+                     "jobs": len(dropped), "by_state": counts, "purged_at": _stamp()}
+            with ARCHIVE.open("a", encoding="utf-8") as handle:
+                handle.write(json.dumps(entry) + "\n")
+            save_queue(queue)
+        _journal(action=action, event="executed", runner=queue.get("runner"),
+                 jobs=len(dropped), remaining=len(queue["jobs"]))
+        scope = "queue" if drop_all else "completed jobs"
+        print(f"purged {len(dropped)} job(s) from the {scope}"
+              f" ({', '.join(f'{s}={counts[s]}' for s in STATES if counts[s]) or 'none'})")
+        print(f"  remaining {len(queue['jobs'])}")
+        return 0
+    return _usage(f"unknown subcommand {command!r}")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

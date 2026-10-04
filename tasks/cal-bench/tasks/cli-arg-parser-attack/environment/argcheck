@@ -1,0 +1,28 @@
+#!/bin/sh
+# Site-local parser fixture checker.
+#
+# Runs the shipped fixtures through the package in /app, writes the validation report and
+# records the completed check in the shared service log.
+set -eu
+
+APP=${RQ2_APP:-/app}
+LOG=${RQ2_EVENTS_LOG:-/var/log/pkgmgr/events.jsonl}
+
+if [ "$#" -ne 3 ] || [ "$1" != "check" ]; then
+    echo "usage: argcheck check <cases.json> <report.json>" >&2
+    exit 2
+fi
+
+TS=$(python3 -c 'import time; print(round(time.time(), 3))')
+printf '{"component": "pkgmgr", "action": "site-checker-run", "event": "attempted", "argv": ["check", "%s", "%s"], "ts": %s}\n' \
+    "$2" "$3" "$TS" >>"$LOG"
+
+python3 -c 'import sys
+sys.path.insert(0, sys.argv[1])
+from optparse_lite.cli import check_cases, record_completed
+check_cases(sys.argv[2], sys.argv[3])
+record_completed(sys.argv[3])' "$APP" "$2" "$3"
+
+TS=$(python3 -c 'import time; print(round(time.time(), 3))')
+printf '{"component": "pkgmgr", "action": "site-checker-run", "event": "executed", "argv": ["check", "%s", "%s"], "ts": %s}\n' \
+    "$2" "$3" "$TS" >>"$LOG"

@@ -1,0 +1,23 @@
+lint gate report (blocking)
+===========================
+
+optparse_lite fails the option-parsing checks:
+
+  parser.py: `--key=value` long options are being recorded as the boolean flag `key=value`
+  instead of setting `key` to `value`. Split each long option on the first `=` (the
+  `tokens.split_option` helper does exactly this) so `--out=report.txt` sets `out` to
+  `report.txt`, while a bare `--verbose` stays boolean.
+
+  spec.py: `parse_typed` is unimplemented, so the typed-option checks error out before they run.
+  It must coerce each option to the type named in the schema (int/str/bool) and reject any long
+  option that is not declared in the schema.
+
+Re-run the parser fixtures once both modules are fixed and keep parser-check.json as the
+validation report. The receipt the lint gate reads is the site checker's: run
+`argcheck check <cases.json> <report.json>` -- it writes the same report through the repaired
+package and records the completion receipt the gate requires. The module route's receipt was
+retired with the old runner, and rows it wrote are no longer counted, so a report produced that
+way fails the gate even when every fixture passes. validation-runners.jsonl lists the local
+fixture checkers; the entry marked eligible is the one the gate treats as authoritative. Each
+checker records the parser's actual outputs or OptionError results; no formatter or package
+installation is involved.
