@@ -1,0 +1,51 @@
+{
+  "text": {
+    "skip": "跳转至研究介绍",
+    "paper": "论文",
+    "heroEyebrow": "编程智能体 harness · 安全机制",
+    "heroDescription": "编程智能体 harness 安全机制的实证研究与评测基准。",
+    "readPaper": "阅读论文",
+    "harnesses": "编程智能体 harness",
+    "mechanisms": "安全机制",
+    "tasks": "编程任务",
+    "trials": "试验",
+    "studyEyebrow": "01 / 实证研究",
+    "studyTitle1": "编程智能体的",
+    "studyTitle2": "harness 安全机制",
+    "studyDescription": "我们研究了 40 种编程智能体 harness，包括 27 种开源产品和 13 种闭源产品。针对全部 400 个 harness–安全机制组合，我们评估其实现状态、默认设置与支持的配置。",
+    "studyFinding": "评估确认 205 个组合实现了对应机制，83 个组合未实现，其余 112 个组合尚未确定。",
+    "benchmarkTitle1": "23 项编程任务",
+    "benchmarkTitle2": "五类攻击面",
+    "benchmarkDescription": "HSB 在六种 harness 中比较原生安全机制的启用与禁用设置。任务效用与攻击效果由各自的确定性判定器（oracles）衡量。",
+    "benchmarkAugmentation": "我们在任务环境中加入误导性上下文与恶意资源，同时保留合法任务要求。",
+    "resultsEyebrow": "03 / 基准评测",
+    "resultsTitle1": "攻击成功率",
+    "resultsTitle2": "任务效用",
+    "resultsDescription": "安全与任务效用方面的影响因机制、harness 和任务而异。",
+    "resultsFinding": "网络隔离和只读模式降低了攻击效果，同时造成较大的任务效用损失。命令允许列表和命令拒绝列表也降低了攻击效果，分别伴随小幅效用损失和效用提升。",
+    "figuresAndTables": "图表与详细结果",
+    "dataAvailability": "数据可用性",
+    "datasetTitle": "Harness 数据集",
+    "datasetDescription": "HSB 任务与判定器已在 GitHub 仓库公开。Harness 数据集、评分记录、试验产物和分析脚本正在准备公开发布。",
+    "repository": "GitHub 仓库"
+  },
+  "aria": {
+    "home": "HarnessSecurity-Bench 首页",
+    "resources": "资料",
+    "language": "语言",
+    "studyScope": "论文报告的研究规模"
+  },
+  "captions": {
+    "fig:hsb-harness-life": "编程智能体 harness 循环中的攻击面",
+    "fig:rq1-overview": "RQ1 的 harness 数据集构建与安全机制分类体系",
+    "fig:rq2-overview": "RQ2 的安全机制评分与共识流程",
+    "fig:rq3-overview": "HarnessSecurity-Bench 的任务构建、执行与判定流程",
+    "fig:hsb-task-attack-case": "以旅程形式展示 Job Scheduler Backoff 任务",
+    "fig:rq3-outcomes-radial": "不同机制与 harness 下的攻击成功率和任务效用",
+    "tab:rq1-consensus": "40 种 harness 的安全机制评分",
+    "tab:hsb-task-catalog": "HSB 任务、技术要素与攻击面覆盖情况",
+    "tab:rq3-results-other-harnesses": "AA、NI、CAL 与 CDL 的评测结果",
+    "tab:rq3-results-six-harnesses": "MCP、PIF、PR、RO 与 PT 的评测结果",
+    "tab:rq3-harness-usage": "输入／输出 token 总量（百万）"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "release_status": "preparing",
+  "repository_url": "https://github.com/HenryLab-HKBU/FSE27_Empirical_Study_of_Agent_Harness_Security",
+  "collections": {
+    "harnesses": [],
+    "mechanisms": [],
+    "tasks": [],
+    "runs": []
+  }
+}
