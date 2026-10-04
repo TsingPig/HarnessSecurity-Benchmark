@@ -1,5 +1,5 @@
 {
-  "manuscript_sha256": "04c8f4270be853328a60745574c0fafc7c16046366ac336e4740322bead07c3a",
+  "manuscript_sha256": "db999b2bf6903673aff8a74f2db4d896518c7a3eed237753f65095ca12f57853",
   "manuscript_url": "assets/paper/manuscript.pdf",
   "items": [
     {
@@ -7,195 +7,239 @@
       "number": "1",
       "label": "fig:hsb-harness-life",
       "caption": "Attack surfaces across the coding agent harness loop. The center shows five stages; panels A–F illustrate paths from adversarial resources or input to changed decisions or execution. Numbered markers identify stages that each surface can affect. HSB evaluates attacks on A–E.",
-      "url": "assets/paper/fig-1-harness-loop.pdf",
+      "url": "assets/paper/fig-1-harness-loop.pdf?v=9f654cfb1170",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
       "manuscript_page": 4,
       "method": "byte-identical figure PDF",
       "region_top_coordinates": null,
       "sha256": "9f654cfb11707d89d39743cffb8bc5673ef6a856d3e4c953fce0927f7f37b92e",
-      "preview_url": "assets/paper/fig-1-harness-loop.svg",
-      "preview_sha256": "18dd380bfc99dd73470e0489909ee75ab2d87bce388c05243631f6841820a368",
-      "preview_viewbox": "0 0 871.74 371.55002"
+      "preview_url": "assets/paper/fig-1-harness-loop.svg?v=c009040404f5",
+      "preview_sha256": "c009040404f582fa8348ff2ac08e5d81472a6899c863f69b698e5adaf9670e58",
+      "preview_viewbox": "0 0 871.74 371.55002",
+      "preview_optimization": {
+        "source_bytes": 1160127,
+        "bytes": 837368
+      }
     },
     {
       "kind": "figure",
       "number": "2",
       "label": "fig:rq1-overview",
       "caption": "Harness dataset construction and security mechanisms taxonomy in RQ1.",
-      "url": "assets/paper/fig-2-rq1-overview.pdf",
+      "url": "assets/paper/fig-2-rq1-overview.pdf?v=3ef6aeb56139",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
-      "manuscript_page": 6,
+      "manuscript_page": 4,
       "method": "byte-identical figure PDF",
       "region_top_coordinates": null,
       "sha256": "3ef6aeb5613983cdef602791ecaf85a150d79b0a9ca4386ebd238833888f950d",
-      "preview_url": "assets/paper/fig-2-rq1-overview.svg",
-      "preview_sha256": "5ee29eab6c6bc07d2e4682a5f71ecfb02152b6a78ddbca45cc1f2e18ae21af19",
-      "preview_viewbox": "0 0 510.256 133.65699"
+      "preview_url": "assets/paper/fig-2-rq1-overview.svg?v=5e5a7cc30fb2",
+      "preview_sha256": "5e5a7cc30fb20d583342616636b8acc6cdd230dbb626d162a83a82cbd6a27eb1",
+      "preview_viewbox": "0 0 510.256 133.65699",
+      "preview_optimization": {
+        "source_bytes": 700726,
+        "bytes": 461238
+      }
     },
     {
       "kind": "figure",
       "number": "3",
       "label": "fig:rq2-overview",
       "caption": "Security mechanism rating and consensus workflow in RQ2.",
-      "url": "assets/paper/fig-3-rq2-overview.pdf",
+      "url": "assets/paper/fig-3-rq2-overview.pdf?v=e7bc6ad06e8a",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
-      "manuscript_page": 8,
+      "manuscript_page": 5,
       "method": "byte-identical figure PDF",
       "region_top_coordinates": null,
       "sha256": "e7bc6ad06e8a6554a35f9efea77942ef66d49d822c058e631587a9a6c2206db6",
-      "preview_url": "assets/paper/fig-3-rq2-overview.svg",
-      "preview_sha256": "cb38718d43da5f12eca8746b6411f551b9f01e4da4d9790b66cde2a28101189d",
-      "preview_viewbox": "0 0 510.251 130.025"
+      "preview_url": "assets/paper/fig-3-rq2-overview.svg?v=3fe23adc5999",
+      "preview_sha256": "3fe23adc59999bfe10fe2b2f0e1b530e8ba1b75bb69cd12d8dabb117311e0f8d",
+      "preview_viewbox": "0 0 510.251 130.025",
+      "preview_optimization": {
+        "source_bytes": 607125,
+        "bytes": 372670
+      }
     },
     {
       "kind": "figure",
       "number": "4",
       "label": "fig:rq3-overview",
       "caption": "Task construction, execution, and oracle workflow in HarnessSecurity-Bench.",
-      "url": "assets/paper/fig-4-rq3-overview.pdf",
+      "url": "assets/paper/fig-4-rq3-overview.pdf?v=b398b33cfc64",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
-      "manuscript_page": 9,
+      "manuscript_page": 6,
       "method": "byte-identical figure PDF",
       "region_top_coordinates": null,
       "sha256": "b398b33cfc6462a05aae26126d3a094777c194c80c3e4c8a93d36c25ab1fe28a",
-      "preview_url": "assets/paper/fig-4-rq3-overview.svg",
-      "preview_sha256": "ce6a499c29d0ba8e34dafcadab0e34b79d6a4ed7fcba1fef703e801f7dd22573",
-      "preview_viewbox": "0 0 510.526 143.45674"
+      "preview_url": "assets/paper/fig-4-rq3-overview.svg?v=273b5769b758",
+      "preview_sha256": "273b5769b758ba59115f8e4a86859d999bc8b23944fe3dbb13cf28b46b97a87e",
+      "preview_viewbox": "0 0 510.526 143.45674",
+      "preview_optimization": {
+        "source_bytes": 586542,
+        "bytes": 381274
+      }
     },
     {
       "kind": "figure",
       "number": "5",
       "label": "fig:hsb-task-attack-case",
       "caption": "Job Scheduler Backoff illustrated as a journey. Green destinations represent legitimate task requirements, yellow detours represent misleading workflow steps, and red regions represent unauthorized actions. Roadblocks represent harness security mechanisms that can block paths to these dangerous regions. U1–U9 and A1–A5 identify utility and attack-effect oracles, respectively; arrows show possible execution paths.",
-      "url": "assets/paper/fig-5-job-scheduler-backoff.pdf",
+      "url": "assets/paper/fig-5-job-scheduler-backoff.pdf?v=c235a1807719",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
-      "manuscript_page": 12,
+      "manuscript_page": 9,
       "method": "byte-identical figure PDF",
       "region_top_coordinates": null,
       "sha256": "c235a18077194b5cdb6ec6b1627c8647cb7242291950583a9f5674e49da2d6a6",
-      "preview_url": "assets/paper/fig-5-job-scheduler-backoff.svg",
-      "preview_sha256": "af65fdd8a101be6978aa1a4ecfd480ac3e3571650f3c7d59766e4103ecaca386",
-      "preview_viewbox": "0 0 518 298"
+      "preview_url": "assets/paper/fig-5-job-scheduler-backoff.svg?v=c85ea1d0c54f",
+      "preview_sha256": "c85ea1d0c54ffb4452bc50e81cd04a7e8728c2807c10be33fd537119fbf5e46e",
+      "preview_viewbox": "0 0 518 298",
+      "preview_optimization": {
+        "source_bytes": 1203762,
+        "bytes": 796160
+      }
     },
     {
       "kind": "figure",
       "number": "6",
       "label": "fig:rq3-outcomes-radial",
       "caption": "Attack success and task utility across mechanisms and harnesses. Circles and squares show paired ON and OFF observations; diamonds show unpaired results. Rings mark 0, 50, and 100%.",
-      "url": "assets/paper/fig-6-attack-success-task-utility.pdf",
+      "url": "assets/paper/fig-6-attack-success-task-utility.pdf?v=713679d2292c",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/main.tex",
-      "manuscript_page": 14,
+      "manuscript_page": 10,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        80.0,
-        451.0,
-        366.162899
+        49.79825653798257,
+        79.68619082250154,
+        562.2017434620175,
+        412.5558203368228
       ],
-      "sha256": "86de4e8f7075051b5db88898b943e3278e2d3f6e302f074ee88754706fd21cad",
-      "preview_url": "assets/paper/fig-6-attack-success-task-utility.svg",
-      "preview_sha256": "344b0973b739b5e3d420093ce96c554cffee872d1b10e9ee27b7d3882e08d65a",
-      "preview_viewbox": "0 0 416 286.162899"
+      "sha256": "713679d2292ca7b5a58ebb933122bde999d79f84d88f1b9c6354a3777e429daf",
+      "preview_url": "assets/paper/fig-6-attack-success-task-utility.svg?v=6a159bc21dfb",
+      "preview_sha256": "6a159bc21dfb72a7b6575f50a525c0638180938b783ab6cb7bd62c8945b3e569",
+      "preview_viewbox": "0 0 512.403487 332.86963",
+      "preview_optimization": {
+        "source_bytes": 3253199,
+        "bytes": 2037337
+      }
     },
     {
       "kind": "table",
       "number": "4",
       "label": "tab:rq1-consensus",
       "caption": "Security mechanism ratings for 40 harnesses.",
-      "url": "assets/paper/table-4-security-mechanism-ratings.pdf",
+      "url": "assets/paper/table-4-security-mechanism-ratings.pdf?v=f3e4336a6717",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/tables/rq1/tab_mechanism_consensus.tex",
-      "manuscript_page": 9,
+      "manuscript_page": 7,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        80.283254,
-        451.0,
-        261.384461
+        49.79825653798257,
+        79.68619082250154,
+        562.2017434620175,
+        302.6725943483421
       ],
-      "sha256": "d20c528cd07bf74670d54e8fa5317998cd9015b87cdc8c02d552f67049e9b205",
-      "preview_url": "assets/paper/table-4-security-mechanism-ratings.svg",
-      "preview_sha256": "9b39b506bb4d41b91d71ceb390729a09dc256bd773a69171591ec969bc686a89",
-      "preview_viewbox": "0 0 416 181.101207"
+      "sha256": "f3e4336a671726cb397774ae0bf946af26a789f585611557830250ceb9c2a35a",
+      "preview_url": "assets/paper/table-4-security-mechanism-ratings.svg?v=dcb2ee2ceae6",
+      "preview_sha256": "dcb2ee2ceae66858340c993d5850f3e58874601a3005ed970b3b1ef13f2f2a97",
+      "preview_viewbox": "0 0 512.403487 222.986404",
+      "preview_optimization": {
+        "source_bytes": 280568,
+        "bytes": 152794
+      }
     },
     {
       "kind": "table",
       "number": "5",
       "label": "tab:hsb-task-catalog",
       "caption": "HSB tasks, technical elements, and attack-surface coverage.",
-      "url": "assets/paper/table-5-hsb-tasks.pdf",
+      "url": "assets/paper/table-5-hsb-tasks.pdf?v=5f656dab52f3",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/tables/rq3/tab_task_catalog.tex",
-      "manuscript_page": 10,
+      "manuscript_page": 7,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        80.283254,
-        451.0,
-        331.089033
+        49.79825653798257,
+        306.62776246789383,
+        562.2017434620175,
+        519.5751065340909
       ],
-      "sha256": "9ec361e01b7207c5e419afcb8af96fdc07973e0cf345776e13e50b349bbe2578",
-      "preview_url": "assets/paper/table-5-hsb-tasks.svg",
-      "preview_sha256": "31235d0186e001c5e0fd908f1d5b09dcc0e94fde60af5f09ccdf7620641c53d4",
-      "preview_viewbox": "0 0 416 250.805779"
+      "sha256": "5f656dab52f3e65c3f347d03ef1f237d7ea050805d3fac318504cc21a1a51534",
+      "preview_url": "assets/paper/table-5-hsb-tasks.svg?v=38e260419ae6",
+      "preview_sha256": "38e260419ae657676e7dd956392276fdc6e1f2bd69a3e27a2fe4acbc3e21e6d4",
+      "preview_viewbox": "0 0 512.403487 212.947344",
+      "preview_optimization": {
+        "source_bytes": 227466,
+        "bytes": 146390
+      }
     },
     {
       "kind": "table",
       "number": "6",
       "label": "tab:rq3-results-other-harnesses",
       "caption": "AA, NI, CAL, and CDL results.",
-      "url": "assets/paper/table-6-aa-ni-cal-cdl.pdf",
+      "url": "assets/paper/table-6-aa-ni-cal-cdl.pdf?v=24f1cfc6eb99",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/tables/rq2/tab_results_other_harnesses.tex",
-      "manuscript_page": 15,
+      "manuscript_page": 11,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        80.283254,
-        451.0,
-        434.326033
+        49.79825653798257,
+        79.68619082250154,
+        562.2017434620175,
+        518.7934156824019
       ],
-      "sha256": "400bd101ee1706e0febafaf15e861ea34d46e87b1ff9a79e099e3666df7dc47e",
-      "preview_url": "assets/paper/table-6-aa-ni-cal-cdl.svg",
-      "preview_sha256": "79c179134131010a9db751edd6f41aaaeb32f9be88ba2418d0643461d245334a",
-      "preview_viewbox": "0 0 416 354.042779"
+      "sha256": "24f1cfc6eb99ae3f56736b76d8f61ef5a6211fce78e42a0e761f6d2fe73c5a30",
+      "preview_url": "assets/paper/table-6-aa-ni-cal-cdl.svg?v=df0e029e2784",
+      "preview_sha256": "df0e029e2784855ab8408e9c3e35d59c3cd79658ad4e2e47b8c3a7a58fb535d6",
+      "preview_viewbox": "0 0 512.403487 439.107225",
+      "preview_optimization": {
+        "source_bytes": 269101,
+        "bytes": 182802
+      }
     },
     {
       "kind": "table",
       "number": "7",
       "label": "tab:rq3-results-six-harnesses",
       "caption": "MCP, PIF, PR, RO, and PT results.",
-      "url": "assets/paper/table-7-mcp-pif-pr-ro-pt.pdf",
+      "url": "assets/paper/table-7-mcp-pif-pr-ro-pt.pdf?v=ca587f0e6bc6",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/tables/rq2/tab_results_six_harnesses.tex",
-      "manuscript_page": 16,
+      "manuscript_page": 12,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        80.283254,
-        451.0,
-        502.182895
+        49.79825653798257,
+        79.68619082250154,
+        562.2017434620175,
+        596.2701812782145
       ],
-      "sha256": "db2297cc03ae1831bfa4afb6011f9891074fee0e0302cd9a91af36d5c3c3b9cb",
-      "preview_url": "assets/paper/table-7-mcp-pif-pr-ro-pt.svg",
-      "preview_sha256": "0be2c3a741ed2bd153668b86c20b6686b369bfcbeecf911b1e2d41521d7df77c",
-      "preview_viewbox": "0 0 416 421.899641"
+      "sha256": "ca587f0e6bc6f934203306a06d0bb356004c8d204f20b44888ccd1f115a614eb",
+      "preview_url": "assets/paper/table-7-mcp-pif-pr-ro-pt.svg?v=0add885d31ee",
+      "preview_sha256": "0add885d31eef715a92a69882bdb60a629229f4b2cb395ca5424b62b0bfa1816",
+      "preview_viewbox": "0 0 512.403487 516.58399",
+      "preview_optimization": {
+        "source_bytes": 331698,
+        "bytes": 224466
+      }
     },
     {
       "kind": "table",
       "number": "8",
       "label": "tab:rq3-harness-usage",
       "caption": "Input / output token totals (millions). U cells are excluded; D is ON-only and A is OFF-only. Dashes denote excluded settings; N/A denotes unavailable totals. Input includes cache-read tokens once.",
-      "url": "assets/paper/table-8-token-totals.pdf",
+      "url": "assets/paper/table-8-token-totals.pdf?v=5fe4595c2163",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/tables/rq2/tab_aa_codex_usage.tex",
-      "manuscript_page": 16,
+      "manuscript_page": 13,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
-        35.0,
-        497.774254,
-        451.0,
-        657.190381
+        49.79825653798257,
+        79.68619082250154,
+        562.2017434620175,
+        275.6932158701743
       ],
-      "sha256": "774689932d462f9dc7861eed47680bd17d8adfd420391fd525711f0d0d7221d4",
-      "preview_url": "assets/paper/table-8-token-totals.svg",
-      "preview_sha256": "6935a87356872eeb7e0fc79f69be82f313ed7c744b2929b6a82083a8f97a2cac",
-      "preview_viewbox": "0 0 416 159.416127"
+      "sha256": "5fe4595c21634a4769e0a9dac03b1016abbe7f09c7d7b244afbe7b71f6d335f8",
+      "preview_url": "assets/paper/table-8-token-totals.svg?v=486ca3ffa0ae",
+      "preview_sha256": "486ca3ffa0aefb6943345c10a1c3771f02a91674ba233c2b1541584b591a64fd",
+      "preview_viewbox": "0 0 512.403487 196.007025",
+      "preview_optimization": {
+        "source_bytes": 280834,
+        "bytes": 187945
+      }
     }
   ]
 }

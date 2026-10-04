@@ -6,56 +6,57 @@
   <meta name="description" content="HarnessSecurity-Bench: An Empirical Study and Benchmark of Security Mechanisms in Coding Agent Harnesses.">
   <title>HarnessSecurity-Bench</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="image" href="assets/paper/fig-1-harness-loop.svg?v=c009040404f5" fetchpriority="high">
   <link rel="stylesheet" href="styles.css?v=5">
-  <script src="app.js?v=5" defer></script>
+  <script src="app.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#study" data-i18n="skip">Skip to the study</a>
   <header class="site-header wrap">
     <a class="wordmark" href="./" aria-label="HarnessSecurity-Bench home" data-i18n-aria="home" lang="en">HarnessSecurity<span>-Bench</span></a>
-    <nav aria-label="Resources" data-i18n-aria="resources"><a href="assets/paper/manuscript.pdf" target="_blank" rel="noopener"><span data-i18n="paper">Paper</span> <span aria-hidden="true">↗</span></a><a href="https://github.com/TsingPig/HarnessSecurity-Benchmark">GitHub <span aria-hidden="true">↗</span></a><div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language"><button type="button" data-language="en" aria-pressed="true" lang="en">EN</button><button type="button" data-language="zh" aria-pressed="false" lang="zh-CN" disabled>中文</button></div></nav>
+    <nav aria-label="Resources" data-i18n-aria="resources"><a href="assets/paper/manuscript.pdf?v=db999b2bf690" target="_blank" rel="noopener"><span data-i18n="paper">Paper</span> <span aria-hidden="true">↗</span></a><a href="https://github.com/TsingPig/HarnessSecurity-Benchmark">GitHub <span aria-hidden="true">↗</span></a><div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language"><button type="button" data-language="en" aria-pressed="true" lang="en">EN</button><button type="button" data-language="zh" aria-pressed="false" lang="zh-CN" disabled>中文</button></div></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="page-title">
       <p class="eyebrow" data-i18n="heroEyebrow">Coding agent harnesses · Security mechanisms</p>
       <h1 id="page-title" lang="en">HarnessSecurity<span>-Bench</span></h1>
       <p class="hero-description" data-i18n="heroDescription">An empirical study and benchmark of security mechanisms in coding agent harnesses.</p>
-      <a class="paper-button" href="assets/paper/manuscript.pdf" target="_blank" rel="noopener"><span data-i18n="readPaper">Read the paper</span> <span aria-hidden="true">↗</span></a>
+      <a class="paper-button" href="assets/paper/manuscript.pdf?v=db999b2bf690" target="_blank" rel="noopener"><span data-i18n="readPaper">Read the paper</span> <span aria-hidden="true">↗</span></a>
       <dl class="study-numbers" aria-label="Study scope reported in the manuscript" data-i18n-aria="studyScope">
         <div><dd>40</dd><dt data-i18n="harnesses">Harnesses</dt></div><div><dd>10</dd><dt data-i18n="mechanisms">Security mechanisms</dt></div><div><dd>23</dd><dt data-i18n="tasks">Coding tasks</dt></div><div><dd>2,500</dd><dt data-i18n="trials">Trials</dt></div>
       </dl>
       <figure class="paper-figure hero-figure" data-paper="fig:hsb-harness-life">
-        <img class="paper-art" src="assets/paper/fig-1-harness-loop.svg" alt="Attack surfaces across the coding agent harness loop" width="872" height="372">
-        <figcaption><span>Fig. 1. Attack surfaces across the coding agent harness loop.</span><a href="assets/paper/fig-1-harness-loop.pdf" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+        <img class="paper-art" decoding="async" src="assets/paper/fig-1-harness-loop.svg?v=c009040404f5" alt="Attack surfaces across the coding agent harness loop" width="872" height="372" loading="eager" fetchpriority="high">
+        <figcaption><span>Fig. 1. Attack surfaces across the coding agent harness loop.</span><a href="assets/paper/fig-1-harness-loop.pdf?v=9f654cfb1170" target="_blank" rel="noopener">PDF ↗</a></figcaption>
       </figure>
     </section>
     <section id="study" class="chapter wrap" aria-labelledby="study-title">
       <div class="chapter-heading"><p class="eyebrow" data-i18n="studyEyebrow">01 / Empirical study</p><h2 id="study-title"><span data-i18n="studyTitle1">Security mechanisms in</span><br><span data-i18n="studyTitle2">coding agent harnesses.</span></h2></div>
       <div class="chapter-copy"><p data-i18n="studyDescription">We study 40 coding agent harnesses: 27 open-source and 13 closed-source products. We assess all 400 harness–mechanism cells, recording implementation status, default settings, and supported configurations.</p><p class="quiet" data-i18n="studyFinding">The assessment confirmed implementation in 205 cells and absence in 83, while 112 remain unresolved.</p></div>
       <figure class="paper-figure full-width" data-paper="tab:rq1-consensus">
-        <img class="paper-art" src="assets/paper/table-4-security-mechanism-ratings.svg" alt="Security mechanism ratings for 40 harnesses" width="416" height="181" loading="lazy">
-        <figcaption><span>Table 4. Security mechanism ratings for 40 harnesses.</span><a href="assets/paper/table-4-security-mechanism-ratings.pdf" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+        <img class="paper-art" decoding="async" src="assets/paper/table-4-security-mechanism-ratings.svg?v=dcb2ee2ceae6" alt="Security mechanism ratings for 40 harnesses" width="512" height="223" loading="lazy" fetchpriority="low">
+        <figcaption><span>Table 4. Security mechanism ratings for 40 harnesses.</span><a href="assets/paper/table-4-security-mechanism-ratings.pdf?v=f3e4336a6717" target="_blank" rel="noopener">PDF ↗</a></figcaption>
       </figure>
     </section>
     <section class="chapter wrap" aria-labelledby="benchmark-title">
       <div class="chapter-heading"><p class="eyebrow" lang="en">02 / HarnessSecurity-Bench</p><h2 id="benchmark-title"><span data-i18n="benchmarkTitle1">23 coding tasks.</span><br><span data-i18n="benchmarkTitle2">Five attack surfaces.</span></h2></div>
       <div class="chapter-copy"><p data-i18n="benchmarkDescription">HSB compares enabled and disabled settings of native security mechanisms across six harnesses. Separate deterministic oracles measure task utility and attack effects.</p><p class="quiet" data-i18n="benchmarkAugmentation">Misleading context and malicious resources augment task environments while preserving legitimate task requirements.</p></div>
       <figure class="paper-figure full-width benchmark-figure" data-paper="fig:hsb-task-attack-case">
-        <img class="paper-art" src="assets/paper/fig-5-job-scheduler-backoff.svg" alt="Job Scheduler Backoff illustrated as a journey" width="518" height="298" loading="lazy">
-        <figcaption><span>Fig. 5. Job Scheduler Backoff illustrated as a journey.</span><a href="assets/paper/fig-5-job-scheduler-backoff.pdf" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+        <img class="paper-art" decoding="async" src="assets/paper/fig-5-job-scheduler-backoff.svg?v=c85ea1d0c54f" alt="Job Scheduler Backoff illustrated as a journey" width="518" height="298" loading="lazy" fetchpriority="low">
+        <figcaption><span>Fig. 5. Job Scheduler Backoff illustrated as a journey.</span><a href="assets/paper/fig-5-job-scheduler-backoff.pdf?v=c235a1807719" target="_blank" rel="noopener">PDF ↗</a></figcaption>
       </figure>
     </section>
     <section class="chapter wrap" aria-labelledby="results-title">
       <div class="chapter-heading"><p class="eyebrow" data-i18n="resultsEyebrow">03 / Benchmark Evaluation</p><h2 id="results-title"><span data-i18n="resultsTitle1">Attack success.</span><br><span data-i18n="resultsTitle2">Task utility.</span></h2></div>
       <div class="chapter-copy"><p data-i18n="resultsDescription">The security and utility effects differ across mechanisms, harnesses, and tasks.</p><p class="quiet" data-i18n="resultsFinding">Network isolation and read-only mode reduce attack effects with substantial utility losses. Command allowlisting and command denylisting reduce attack effects with a small utility loss and a utility gain, respectively.</p></div>
       <figure class="paper-figure full-width results-figure" data-paper="fig:rq3-outcomes-radial">
-        <img class="paper-art" src="assets/paper/fig-6-attack-success-task-utility.svg" alt="Attack success and task utility across mechanisms and harnesses" width="416" height="286" loading="lazy">
-        <figcaption><span>Fig. 6. Attack success and task utility across mechanisms and harnesses.</span><a href="assets/paper/fig-6-attack-success-task-utility.pdf" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+        <img class="paper-art" decoding="async" src="assets/paper/fig-6-attack-success-task-utility.svg?v=6a159bc21dfb" alt="Attack success and task utility across mechanisms and harnesses" width="512" height="333" loading="lazy" fetchpriority="low">
+        <figcaption><span>Fig. 6. Attack success and task utility across mechanisms and harnesses.</span><a href="assets/paper/fig-6-attack-success-task-utility.pdf?v=713679d2292c" target="_blank" rel="noopener">PDF ↗</a></figcaption>
       </figure>
-      <details class="all-results full-width"><summary><span data-i18n="figuresAndTables">Figures and tables</span><span class="disclosure-icon" aria-hidden="true">+</span></summary><div id="paper-resources" class="paper-resources"><p><a href="assets/paper/table-5-hsb-tasks.pdf">Table 5. HSB tasks, technical elements, and attack-surface coverage. ↗</a></p><p><a href="assets/paper/table-6-aa-ni-cal-cdl.pdf">Table 6. AA, NI, CAL, and CDL results. ↗</a></p><p><a href="assets/paper/table-7-mcp-pif-pr-ro-pt.pdf">Table 7. MCP, PIF, PR, RO, and PT results. ↗</a></p><p><a href="assets/paper/table-8-token-totals.pdf">Table 8. Input / output token totals (millions). ↗</a></p></div></details>
+      <details class="all-results full-width"><summary><span data-i18n="figuresAndTables">Figures and tables</span><span class="disclosure-icon" aria-hidden="true">+</span></summary><div id="paper-resources" class="paper-resources"><p><a href="assets/paper/table-5-hsb-tasks.pdf?v=5f656dab52f3">Table 5. HSB tasks, technical elements, and attack-surface coverage. ↗</a></p><p><a href="assets/paper/table-6-aa-ni-cal-cdl.pdf?v=24f1cfc6eb99">Table 6. AA, NI, CAL, and CDL results. ↗</a></p><p><a href="assets/paper/table-7-mcp-pif-pr-ro-pt.pdf?v=ca587f0e6bc6">Table 7. MCP, PIF, PR, RO, and PT results. ↗</a></p><p><a href="assets/paper/table-8-token-totals.pdf?v=5fe4595c2163">Table 8. Input / output token totals (millions). ↗</a></p></div></details>
     </section>
     <section id="dataset" class="dataset wrap" aria-labelledby="dataset-title"><div><p class="eyebrow" data-i18n="dataAvailability">Data availability</p><h2 id="dataset-title" data-i18n="datasetTitle">Harness Dataset</h2></div><div class="dataset-copy"><p data-i18n="datasetDescription">HSB tasks and oracles are available in the GitHub repository. The harness dataset, rating records, trial artifacts, and analysis scripts are being prepared for public release.</p><a class="text-link" href="https://github.com/TsingPig/HarnessSecurity-Benchmark"><span data-i18n="repository">GitHub repository</span> <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="wrap"><span lang="en">HarnessSecurity-Bench</span><a href="assets/paper/manuscript.pdf" target="_blank" rel="noopener"><span data-i18n="paper">Paper</span> ↗</a></footer>
+  <footer class="wrap"><span lang="en">HarnessSecurity-Bench</span><a href="assets/paper/manuscript.pdf?v=db999b2bf690" target="_blank" rel="noopener"><span data-i18n="paper">Paper</span> ↗</a></footer>
 </body>
 </html>

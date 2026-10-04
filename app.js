@@ -6,7 +6,7 @@ const englishAria = Object.fromEntries(ariaElements.map(element => [element.data
 const englishDescription = document.querySelector('meta[name="description"]').content;
 const languageButtons = [...document.querySelectorAll("[data-language]")];
 
-Promise.all(["data/paper-assets.json", "data/translations.zh.json"].map(url => fetch(url).then(response => {
+Promise.all(["data/paper-assets.json?v=6", "data/translations.zh.json"].map(url => fetch(url).then(response => {
   if (!response.ok) throw new Error("Page content unavailable");
   return response.json();
 }))).then(([{items}, chinese]) => {
@@ -47,7 +47,6 @@ Promise.all(["data/paper-assets.json", "data/translations.zh.json"].map(url => f
     const item = items.find(record => record.label === figure.dataset.paper);
     if (!item) continue;
     const illustration = figure.querySelector("img");
-    illustration.src = item.preview_url;
     const [, , width, height] = item.preview_viewbox.split(/\s+/).map(Number);
     illustration.width = Math.round(width);
     illustration.height = Math.round(height);

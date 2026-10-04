@@ -40,20 +40,31 @@ Translation scope:
 ## Assets
 
 From the study repository root, run `python scripts/site/sync_paper_pdfs.py`
-after compiling the paper into `.build/arxiv/`. The script requires `pypdf`
-and Poppler's `pdftotext` on PATH. SVG export also requires `pdftocairo`;
+after compiling the paper into `.build/arxiv/`. The script requires `pypdf`. SVG export also requires `pdftocairo`;
 use `--pdftocairo <path>` if it is not on PATH or in the standard local MiKTeX
 installation. The script copies the full paper and five original
 figure PDFs byte for byte, and extracts Figure 6 and Tables 4–8 without
 rasterization. `data/paper-assets.json` records source paths, manuscript and
-asset hashes, captions, extraction regions, and SVG preview hashes. Review the extracted regions
-after manuscript layout changes. Existing raster icons in original figures
+asset hashes, captions, extraction regions, and SVG preview hashes. Crops follow
+invisible shipout anchors in the manuscript, so they remain aligned after
+two-column reflow. Review the extracted regions after manuscript layout changes. Existing raster icons in original figures
 remain unchanged; text, table rules, and plotted paths remain vector content.
 
 The page displays SVG illustrations exported directly from the PDFs using
 Poppler. They scale with the page and have no viewer controls, frames, or internal
 scrollbars. Vector paths and glyphs remain vector content, and existing raster
 icons are preserved. Every visual retains a direct link to its original PDF.
+
+After exporting, run `npm ci --prefix scripts/site` and
+`npm run optimize --prefix scripts/site` from the study repository root.
+The optimizer removes redundant vector markup and shares identical embedded
+images without resizing or re-encoding their pixels. It retains the original
+viewBox and uses five-decimal precision for path operations. The current four
+page illustrations total 3.82 MB, reduced from 5.90 MB (35.2%). Their SVG URLs
+include content hashes to refresh changed previews. The hero image is preloaded
+with high fetch priority; lower images use lazy loading and asynchronous decoding.
+Original PDFs retain their source quality.
+
 
 ## Dataset release
 
