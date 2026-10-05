@@ -6,7 +6,7 @@ const englishAria = Object.fromEntries(ariaElements.map(element => [element.data
 const englishDescription = document.querySelector('meta[name="description"]').content;
 const languageButtons = [...document.querySelectorAll("[data-language]")];
 
-Promise.all(["data/paper-assets.json?v=7", "data/translations.zh.json?v=3"].map(url => fetch(url).then(response => {
+Promise.all(["data/paper-assets.json?v=7", "data/translations.zh.json?v=4"].map(url => fetch(url).then(response => {
   if (!response.ok) throw new Error("Page content unavailable");
   return response.json();
 }))).then(([{items}, chinese]) => {
