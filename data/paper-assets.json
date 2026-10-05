@@ -105,7 +105,7 @@
       "number": "6",
       "label": "fig:rq3-outcomes-radial",
       "caption": "Attack success and task utility across mechanisms and harnesses. Circles and squares show paired ON and OFF observations; diamonds show unpaired results. Rings mark 0, 50, and 100%.",
-      "url": "assets/paper/fig-6-attack-success-task-utility.pdf?v=f4fe0e62fc0c",
+      "url": "assets/paper/fig-6-attack-success-task-utility.pdf?v=5f57ba1d109f",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/main.tex",
       "manuscript_page": 11,
       "method": "vector region from compiled manuscript",
@@ -113,15 +113,15 @@
         70.0,
         94.99381256103516,
         542.0,
-        395.4253845214844
+        371.3456115722656
       ],
-      "sha256": "f4fe0e62fc0cbec546cc7637b4310fb481c81a5696cb7c0175fbe265f9836847",
-      "preview_url": "assets/paper/fig-6-attack-success-task-utility.svg?v=27d33c0931d2",
-      "preview_sha256": "27d33c0931d2592e66681aff74c57dad9532ef93c20c19643131c06af26f6597",
-      "preview_viewbox": "0 0 472 300.432",
+      "sha256": "5f57ba1d109f76b3d6837583dc0b485b230559f9b13e089fbf8a5f04363822fc",
+      "preview_url": "assets/paper/fig-6-attack-success-task-utility.svg?v=f8552da6fb21",
+      "preview_sha256": "f8552da6fb21519aa820fcc1c35f4debfe6e5cb3197b53e39a23ffc3a3dd7f7b",
+      "preview_viewbox": "0 0 472 276.352",
       "preview_optimization": {
-        "source_bytes": 1792132,
-        "bytes": 625284
+        "source_bytes": 1791613,
+        "bytes": 625326
       }
     },
     {
@@ -129,23 +129,23 @@
       "number": "4",
       "label": "tab:rq1-consensus",
       "caption": "Security mechanism ratings for 40 harnesses.",
-      "url": "assets/paper/table-4-security-mechanism-ratings.pdf?v=acf25896a6f8",
+      "url": "assets/paper/table-4-security-mechanism-ratings.pdf?v=001ae33f916c",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/tables/rq1/tab_mechanism_consensus.tex",
       "manuscript_page": 7,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
         81.0,
-        77.06610870361328,
+        88.85384979248047,
         531.0,
         281.91802978515625
       ],
-      "sha256": "acf25896a6f8aabbe54f2c48a7dcba6c6cb02e6f5ac47d6fc82705234d2df82e",
-      "preview_url": "assets/paper/table-4-security-mechanism-ratings.svg?v=bf102c960c20",
-      "preview_sha256": "bf102c960c201147d3261510ccd5db7003d428f1d51dbd54b86a67587aa69eb1",
-      "preview_viewbox": "0 0 450 204.852",
+      "sha256": "001ae33f916c6f2127c6b6e46ecaaee81cd31b761008f04fd4e1dcb55bc4757e",
+      "preview_url": "assets/paper/table-4-security-mechanism-ratings.svg?v=53891a3c9158",
+      "preview_sha256": "53891a3c91588d476b23e8a826e228d5d96673117df5bb349b4fc8ab3a1620f4",
+      "preview_viewbox": "0 0 450 193.064",
       "preview_optimization": {
-        "source_bytes": 886714,
-        "bytes": 564932
+        "source_bytes": 887590,
+        "bytes": 563561
       }
     },
     {
@@ -153,23 +153,23 @@
       "number": "5",
       "label": "tab:hsb-task-catalog",
       "caption": "HSB tasks, technical elements, and attack-surface coverage.",
-      "url": "assets/paper/table-5-hsb-tasks.pdf?v=35fd3a72f4ae",
+      "url": "assets/paper/table-5-hsb-tasks.pdf?v=bdce3907b644",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/tables/rq3/tab_task_catalog.tex",
       "manuscript_page": 8,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
         120.0,
-        195.0930938720703,
+        206.7489990234375,
         492.0,
         438.1363830566406
       ],
-      "sha256": "35fd3a72f4ae4930e991b720ab7a3707836b53921f5d76d2e3a2d21c7c1f6970",
-      "preview_url": "assets/paper/table-5-hsb-tasks.svg?v=87a96bab9ae0",
-      "preview_sha256": "87a96bab9ae0cd21c6ea6554cda37c5caf3f65b124d9d08425aa92bfd8f433a1",
-      "preview_viewbox": "0 0 372 243.043",
+      "sha256": "bdce3907b644d1f4e4c91eb8c4b4030655c0ff71ac2089e8980bcca7758d02f9",
+      "preview_url": "assets/paper/table-5-hsb-tasks.svg?v=cb96b89b4e80",
+      "preview_sha256": "cb96b89b4e80f034d83cc565dafc4d9b23e0c24d881aeb1769da65e2a3e68b3d",
+      "preview_viewbox": "0 0 372 231.387",
       "preview_optimization": {
-        "source_bytes": 487140,
-        "bytes": 364502
+        "source_bytes": 485841,
+        "bytes": 365225
       }
     },
     {
@@ -177,23 +177,23 @@
       "number": "6",
       "label": "tab:rq3-results-other-harnesses",
       "caption": "AA, NI, CAL, and CDL results.",
-      "url": "assets/paper/table-6-aa-ni-cal-cdl.pdf?v=166b05d7e209",
+      "url": "assets/paper/table-6-aa-ni-cal-cdl.pdf?v=b44f9387d7b3",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/tables/rq2/tab_results_other_harnesses.tex",
       "manuscript_page": 12,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
         78.0,
-        77.06610870361328,
+        88.72278442382813,
         531.0,
         430.6043701171875
       ],
-      "sha256": "166b05d7e2097f4601471d8f1b44fdb7da10bde3c62a2a64b3c0856d026b629f",
-      "preview_url": "assets/paper/table-6-aa-ni-cal-cdl.svg?v=585a5f859219",
-      "preview_sha256": "585a5f859219ac61369654344cd3c35fe6a6af625d198d21886bbb8cd44cf7f0",
-      "preview_viewbox": "0 0 453 353.538",
+      "sha256": "b44f9387d7b38275950ac87338a777b032adf5aaea761ba5c743199177d4c2e5",
+      "preview_url": "assets/paper/table-6-aa-ni-cal-cdl.svg?v=d25e75575dd8",
+      "preview_sha256": "d25e75575dd8c474473b7d02eb34359a1f10b3b0e2a31c19c81cc0750ed1e084",
+      "preview_viewbox": "0 0 453 341.882",
       "preview_optimization": {
-        "source_bytes": 505550,
-        "bytes": 385303
+        "source_bytes": 505356,
+        "bytes": 384826
       }
     },
     {
@@ -201,23 +201,23 @@
       "number": "7",
       "label": "tab:rq3-results-six-harnesses",
       "caption": "MCP, PIF, PR, RO, and PT results.",
-      "url": "assets/paper/table-7-mcp-pif-pr-ro-pt.pdf?v=e2848510742c",
+      "url": "assets/paper/table-7-mcp-pif-pr-ro-pt.pdf?v=d5a45884ebc7",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/tables/rq2/tab_results_six_harnesses.tex",
       "manuscript_page": 13,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
         78.0,
-        90.05011749267578,
+        101.69019165039063,
         531.0,
         506.41693115234375
       ],
-      "sha256": "e2848510742cf77c823df02175f462984fd9b561eb8da67d3632f2914fa6a205",
-      "preview_url": "assets/paper/table-7-mcp-pif-pr-ro-pt.svg?v=43d0d0e17de6",
-      "preview_sha256": "43d0d0e17de637fb5ffbfeb047b90e1b96697fd0fc76c176958b69ee63623c44",
-      "preview_viewbox": "0 0 453 416.367",
+      "sha256": "d5a45884ebc7f85d6bb4a9946064c6f99b19853bc1d9fd4f459ef40f777ac182",
+      "preview_url": "assets/paper/table-7-mcp-pif-pr-ro-pt.svg?v=ed1b878f2e39",
+      "preview_sha256": "ed1b878f2e3961856bdf565c270f967d1a28a8b0f89151d5f3bac65f6799a2c1",
+      "preview_viewbox": "0 0 453 404.727",
       "preview_optimization": {
-        "source_bytes": 575397,
-        "bytes": 441917
+        "source_bytes": 575334,
+        "bytes": 441633
       }
     },
     {
@@ -225,23 +225,23 @@
       "number": "8",
       "label": "tab:rq3-harness-usage",
       "caption": "Input / output token totals (millions). U cells are excluded; D is ON-only and A is OFF-only. Dashes denote excluded settings; N/A denotes unavailable totals. Input includes cache-read tokens once.",
-      "url": "assets/paper/table-8-token-totals.pdf?v=408192586926",
+      "url": "assets/paper/table-8-token-totals.pdf?v=bc71c097096b",
       "source": "paper/FSE27_Harness_Security_Empirical_Study-Overleaf-/preprint-single-column/tables/rq2/tab_aa_codex_usage.tex",
       "manuscript_page": 13,
       "method": "vector region from compiled manuscript",
       "region_top_coordinates": [
         70.0,
-        543.1786499023438,
+        564.7450927734375,
         542.0,
         709.7504272460938
       ],
-      "sha256": "4081925869263306e86fd9041065989f2188e2d85d69d08a42caded0641d636b",
-      "preview_url": "assets/paper/table-8-token-totals.svg?v=5a4a1a83f259",
-      "preview_sha256": "5a4a1a83f259cb93ac19fe8ecd4a3e72edd658b06ee8fb731e92ff9e8c6a18a1",
-      "preview_viewbox": "0 0 472 166.572",
+      "sha256": "bc71c097096b4aae1c742c6d32435a3397e96939cca2f6bb1605b2eceb4fc827",
+      "preview_url": "assets/paper/table-8-token-totals.svg?v=ae2b0c6d5e21",
+      "preview_sha256": "ae2b0c6d5e2165c564cc7493fcdc748c8daf444ad4e61a7005442ece32721def",
+      "preview_viewbox": "0 0 472 145.005",
       "preview_optimization": {
-        "source_bytes": 578531,
-        "bytes": 443177
+        "source_bytes": 578640,
+        "bytes": 443591
       }
     }
   ]
