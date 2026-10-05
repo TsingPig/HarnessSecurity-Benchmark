@@ -9,6 +9,7 @@
     "mechanisms": "安全机制",
     "tasks": "编程任务",
     "trials": "试验",
+    "tokens": "已报告 token",
     "studyEyebrow": "01 / 实证研究",
     "studyTitle1": "编程智能体的",
     "studyTitle2": "harness 安全机制",
@@ -33,13 +34,13 @@
     "home": "HarnessSecurity-Bench 首页",
     "resources": "资料",
     "language": "语言",
-    "studyScope": "论文报告的研究规模"
+    "studyScope": "基准评测规模"
   },
   "captions": {
     "fig:hsb-harness-life": "编程智能体 harness 循环中的攻击面",
-    "fig:rq1-overview": "RQ1 的 harness 数据集构建与安全机制分类体系",
-    "fig:rq2-overview": "RQ2 的安全机制评分与共识流程",
-    "fig:rq3-overview": "HarnessSecurity-Bench 的任务构建、执行与判定流程",
+    "fig:rq1-overview": "RQ1：发现 harness，梳理安全机制",
+    "fig:rq2-overview": "RQ2：独立评分与共识判定",
+    "fig:rq3-overview": "RQ3：构建任务、执行评测、衡量结果",
     "fig:hsb-task-attack-case": "以旅程形式展示 Job Scheduler Backoff 任务",
     "fig:rq3-outcomes-radial": "不同机制与 harness 下的攻击成功率和任务效用",
     "tab:rq1-consensus": "40 种 harness 的安全机制评分",

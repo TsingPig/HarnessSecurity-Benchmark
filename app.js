@@ -6,12 +6,12 @@ const englishAria = Object.fromEntries(ariaElements.map(element => [element.data
 const englishDescription = document.querySelector('meta[name="description"]').content;
 const languageButtons = [...document.querySelectorAll("[data-language]")];
 
-Promise.all(["data/paper-assets.json?v=6", "data/translations.zh.json"].map(url => fetch(url).then(response => {
+Promise.all(["data/paper-assets.json?v=7", "data/translations.zh.json?v=2"].map(url => fetch(url).then(response => {
   if (!response.ok) throw new Error("Page content unavailable");
   return response.json();
 }))).then(([{items}, chinese]) => {
   function caption(item, language) {
-    const english = item.caption.split(". ")[0].replace(/\.$/, "");
+    const english = (item.display_caption || item.caption.split(". ")[0]).replace(/\.$/, "");
     if (language === "zh") return `${item.kind === "figure" ? "图" : "表"} ${item.number} · ${chinese.captions[item.label] || english}`;
     return `${item.kind === "figure" ? "Fig." : "Table"} ${item.number}. ${english}.`;
   }

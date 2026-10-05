@@ -7,8 +7,8 @@
   <title>HarnessSecurity-Bench</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preload" as="image" href="assets/paper/fig-1-harness-loop.svg?v=c009040404f5" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=5">
-  <script src="app.js?v=6" defer></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="app.js?v=7" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#study" data-i18n="skip">Skip to the study</a>
@@ -22,8 +22,8 @@
       <h1 id="page-title" lang="en">HarnessSecurity<span>-Bench</span></h1>
       <p class="hero-description" data-i18n="heroDescription">An empirical study and benchmark of security mechanisms in coding agent harnesses.</p>
       <a class="paper-button" href="assets/paper/manuscript.pdf?v=1f341f4771e6" target="_blank" rel="noopener"><span data-i18n="readPaper">Read the paper</span> <span aria-hidden="true">↗</span></a>
-      <dl class="study-numbers" aria-label="Study scope reported in the manuscript" data-i18n-aria="studyScope">
-        <div><dd>40</dd><dt data-i18n="harnesses">Harnesses</dt></div><div><dd>10</dd><dt data-i18n="mechanisms">Security mechanisms</dt></div><div><dd>23</dd><dt data-i18n="tasks">Coding tasks</dt></div><div><dd>2,500</dd><dt data-i18n="trials">Trials</dt></div>
+      <dl class="study-numbers" aria-label="Benchmark evaluation scope" data-i18n-aria="studyScope">
+        <div><dd>6</dd><dt data-i18n="harnesses">Harnesses</dt></div><div><dd>9</dd><dt data-i18n="mechanisms">Security mechanisms</dt></div><div><dd>23</dd><dt data-i18n="tasks">Coding tasks</dt></div><div><dd>2,500</dd><dt data-i18n="trials">Trials</dt></div><div class="token-metric"><dd>2,218.20M</dd><dt data-i18n="tokens">Reported tokens</dt></div>
       </dl>
       <figure class="paper-figure hero-figure" data-paper="fig:hsb-harness-life">
         <img class="paper-art" decoding="async" src="assets/paper/fig-1-harness-loop.svg?v=c009040404f5" alt="Attack surfaces across the coding agent harness loop" width="872" height="372" loading="eager" fetchpriority="high">
@@ -33,6 +33,14 @@
     <section id="study" class="chapter wrap" aria-labelledby="study-title">
       <div class="chapter-heading"><p class="eyebrow" data-i18n="studyEyebrow">01 / Empirical study</p><h2 id="study-title"><span data-i18n="studyTitle1">Security mechanisms in</span><br><span data-i18n="studyTitle2">coding agent harnesses.</span></h2></div>
       <div class="chapter-copy"><p data-i18n="studyDescription">We study 40 coding agent harnesses: 27 open-source and 13 closed-source products. We assess all 400 harness–mechanism cells, recording implementation status, default settings, and supported configurations.</p><p class="quiet" data-i18n="studyFinding">The assessment confirmed implementation in 205 cells and absence in 83, while 112 remain unresolved.</p></div>
+      <figure class="paper-figure full-width overview-figure" data-paper="fig:rq1-overview">
+        <img class="paper-art" decoding="async" src="assets/paper/fig-2-rq1-overview.svg?v=5e5a7cc30fb2" alt="RQ1: Mapping harnesses and security mechanisms" width="510" height="134" loading="lazy" fetchpriority="low">
+        <figcaption><span>Fig. 2. RQ1: Mapping harnesses and security mechanisms.</span><a href="assets/paper/fig-2-rq1-overview.pdf?v=3ef6aeb56139" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+      </figure>
+      <figure class="paper-figure full-width overview-figure" data-paper="fig:rq2-overview">
+        <img class="paper-art" decoding="async" src="assets/paper/fig-3-rq2-overview.svg?v=3fe23adc5999" alt="RQ2: From independent ratings to consensus" width="510" height="130" loading="lazy" fetchpriority="low">
+        <figcaption><span>Fig. 3. RQ2: From independent ratings to consensus.</span><a href="assets/paper/fig-3-rq2-overview.pdf?v=e7bc6ad06e8a" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+      </figure>
       <figure class="paper-figure full-width" data-paper="tab:rq1-consensus">
         <img class="paper-art" decoding="async" src="assets/paper/table-4-security-mechanism-ratings.svg?v=dcb2ee2ceae6" alt="Security mechanism ratings for 40 harnesses" width="512" height="223" loading="lazy" fetchpriority="low">
         <figcaption><span>Table 4. Security mechanism ratings for 40 harnesses.</span><a href="assets/paper/table-4-security-mechanism-ratings.pdf?v=f3e4336a6717" target="_blank" rel="noopener">PDF ↗</a></figcaption>
@@ -41,6 +49,10 @@
     <section class="chapter wrap" aria-labelledby="benchmark-title">
       <div class="chapter-heading"><p class="eyebrow" lang="en">02 / HarnessSecurity-Bench</p><h2 id="benchmark-title"><span data-i18n="benchmarkTitle1">23 coding tasks.</span><br><span data-i18n="benchmarkTitle2">Five attack surfaces.</span></h2></div>
       <div class="chapter-copy"><p data-i18n="benchmarkDescription">HSB compares enabled and disabled settings of native security mechanisms across six harnesses. Separate deterministic oracles measure task utility and attack effects.</p><p class="quiet" data-i18n="benchmarkAugmentation">Misleading context and malicious resources augment task environments while preserving legitimate task requirements.</p></div>
+      <figure class="paper-figure full-width overview-figure" data-paper="fig:rq3-overview">
+        <img class="paper-art" decoding="async" src="assets/paper/fig-4-rq3-overview.svg?v=273b5769b758" alt="RQ3: From coding tasks to utility and attack results" width="511" height="143" loading="lazy" fetchpriority="low">
+        <figcaption><span>Fig. 4. RQ3: From coding tasks to utility and attack results.</span><a href="assets/paper/fig-4-rq3-overview.pdf?v=b398b33cfc64" target="_blank" rel="noopener">PDF ↗</a></figcaption>
+      </figure>
       <figure class="paper-figure full-width benchmark-figure" data-paper="fig:hsb-task-attack-case">
         <img class="paper-art" decoding="async" src="assets/paper/fig-5-job-scheduler-backoff.svg?v=c85ea1d0c54f" alt="Job Scheduler Backoff illustrated as a journey" width="518" height="298" loading="lazy" fetchpriority="low">
         <figcaption><span>Fig. 5. Job Scheduler Backoff illustrated as a journey.</span><a href="assets/paper/fig-5-job-scheduler-backoff.pdf?v=c235a1807719" target="_blank" rel="noopener">PDF ↗</a></figcaption>
