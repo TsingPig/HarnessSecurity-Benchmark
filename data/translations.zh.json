@@ -19,7 +19,7 @@
     "benchmarkTitle2": "五类攻击面",
     "benchmarkDescription": "HSB 在六种 harness 中比较原生安全机制的启用与禁用设置。任务效用与攻击效果由各自的确定性判定器（oracles）衡量。",
     "benchmarkAugmentation": "我们在任务环境中加入误导性上下文与恶意资源，同时保留合法任务要求。",
-    "resultsEyebrow": "03 / 基准评测",
+    "resultsEyebrow": "主要结论",
     "resultsTitle1": "攻击成功率",
     "resultsTitle2": "任务效用",
     "resultsDescription": "安全与任务效用方面的影响因机制、harness 和任务而异。",
