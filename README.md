@@ -6,6 +6,10 @@ Figures and tables flow directly through the page. A collapsed resource list
 provides every Figure 1–6 and Table 4–8 without a selector or catalog interface.
 Scientific terms, numbers, and figure captions come from the manuscript.
 
+All paper entry points link to the published arXiv preprint:
+<https://arxiv.org/abs/2610.07639>. The bundled manuscript and its manifest hash
+record the source used to extract the website figures and tables.
+
 ## Languages
 
 The header's **EN / 中文** buttons switch page text, figure captions, image alt
