@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="HarnessSecurity-Bench: An Empirical Study and Benchmark of Security Mechanisms in Coding Agent Harnesses.">
   <title>HarnessSecurity-Bench</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico?v=mascot1" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" href="favicon.png?v=mascot1" sizes="64x64">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=mascot1" sizes="180x180">
   <link rel="preload" as="image" href="assets/paper/fig-6-attack-success-task-utility.svg?v=f8552da6fb21" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
   <script src="app.js?v=11" defer></script>
 </head>
 <body>
@@ -18,6 +20,15 @@
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="page-title">
+      <div class="hero-intro">
+      <picture class="hero-mascot mascot-thinking" aria-hidden="true">
+        <source media="(max-width: 900px)" srcset="assets/mascots/thinking-320.webp">
+        <img src="assets/mascots/thinking-640.webp" alt="" width="640" height="640" decoding="async" fetchpriority="low">
+      </picture>
+      <picture class="hero-mascot mascot-stance" aria-hidden="true">
+        <source media="(max-width: 900px)" srcset="assets/mascots/stance-320.webp">
+        <img src="assets/mascots/stance-640.webp" alt="" width="640" height="755" decoding="async" fetchpriority="low">
+      </picture>
       <p class="eyebrow" data-i18n="heroEyebrow">Coding agent harnesses · Security mechanisms</p>
       <h1 id="page-title" lang="en">HarnessSecurity<span>-Bench</span></h1>
       <p class="hero-description" data-i18n="heroDescription">An empirical study and benchmark of security mechanisms in coding agent harnesses.</p>
@@ -25,6 +36,7 @@
       <dl class="study-numbers" aria-label="Benchmark evaluation scope" data-i18n-aria="studyScope">
         <div><dd>6</dd><dt data-i18n="harnesses">Harnesses</dt></div><div><dd>9</dd><dt data-i18n="mechanisms">Security mechanisms</dt></div><div><dd>23</dd><dt data-i18n="tasks">Coding tasks</dt></div><div><dd>2,500</dd><dt data-i18n="trials">Trials</dt></div><div class="token-metric"><dd>2,218.20M</dd><dt data-i18n="tokens">Consumed tokens</dt></div>
       </dl>
+      </div>
       <figure class="paper-figure hero-figure results-figure" data-paper="fig:rq3-outcomes-radial">
         <img class="paper-art" decoding="async" src="assets/paper/fig-6-attack-success-task-utility.svg?v=f8552da6fb21" alt="Attack success and task utility across mechanisms and harnesses" width="472" height="276" loading="eager" fetchpriority="high">
         <figcaption><span>Fig. 6. Attack success and task utility across mechanisms and harnesses.</span><a href="assets/paper/fig-6-attack-success-task-utility.pdf?v=5f57ba1d109f" target="_blank" rel="noopener">PDF ↗</a></figcaption>

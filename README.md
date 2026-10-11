@@ -70,6 +70,17 @@ with high fetch priority; lower images use lazy loading and asynchronous decodin
 Original PDFs retain their source quality.
 
 
+## Mascot assets
+
+The two transparent mascots use 320/640 px WebP assets. Desktop images total
+64,710 bytes; viewport widths up to 900 px use the 27,770-byte smaller pair.
+They decode asynchronously with low fetch priority. The paper figure keeps
+its existing preload and high priority. At narrow widths the mascots move
+above the title. Browser icons use a face crop of the thinking mascot.
+
+HD originals, ImageGen prompts, and `scripts/site/optimize_mascots.py` are
+retained in the study repository rather than bundled with the public page.
+
 ## Dataset release
 
 The dataset remains in preparation. `data/catalog.json` retains four empty
