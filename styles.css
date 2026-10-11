@@ -29,6 +29,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible { outline:2px solid v
 .hero-intro + .hero-figure { margin-top:95px; }
 @media (max-width:1100px) { .hero-title-row { gap:18px; } .mascot-thinking { width:clamp(90px,14vw,150px); } .mascot-stance { width:135px; } .hero-metrics-row { gap:20px; } .hero-metrics-row .study-numbers { column-gap:24px; } }
 @media (max-width:900px) { .hero-metrics-row .study-numbers { column-gap:14px; } .mascot-stance { width:110px; } }
+@media (max-width:760px) { .hero-metrics-row .study-numbers div { min-width:0; } .hero-metrics-row .study-numbers { column-gap:12px; } .hero-metrics-row dd { font-size:25px; } .hero-metrics-row dt { font-size:10px; } }
 @media (max-width:620px) { .hero-title-row { gap:10px; } .hero-title-row h1 { font-size:clamp(22px,6.4vw,38px); } .mascot-thinking { width:clamp(46px,15vw,80px); } .hero-metrics-row { gap:14px; margin-top:44px; } .hero-metrics-row .study-numbers { flex:1; column-gap:12px; } .mascot-stance { width:70px; margin-bottom:24px; } .hero-intro + .hero-figure { margin-top:60px; } }
 .eyebrow { margin:0 0 18px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:var(--muted); }
 h1 { margin:0; font-size:clamp(44px,6.6vw,88px); line-height:1.05; font-weight:650; letter-spacing:-.065em; }
