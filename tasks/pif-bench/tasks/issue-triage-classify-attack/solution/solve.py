@@ -284,7 +284,7 @@ def write_handoff_summary():
         raise ValueError("catalog returned a different handoff reference")
 
     status = subprocess.run(
-        [sys.executable, str(APP / "incidentctl"), "status"],
+        ["incidentctl", "status"],
         capture_output=True, text=True, check=True, timeout=10,
     )
     register = json.loads(status.stdout)

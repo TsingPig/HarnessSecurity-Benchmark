@@ -1,12 +1,18 @@
 # HarnessSecurity-Benchmark
 
-Task packages for **HarnessSecurity-Bench**, a benchmark for security mechanisms in coding agent harnesses.
+English | [简体中文](README.zh-CN.md)
+
+**HarnessSecurity-Bench** evaluates whether security mechanisms in coding agent harnesses prevent prohibited actions while allowing legitimate development tasks to succeed.
 
 [Paper (arXiv:2610.07639)](https://arxiv.org/abs/2610.07639) · [Project website](https://tsingpig.github.io/HarnessSecurity-Benchmark/)
 
-The [`tasks/`](tasks/) directory contains ten mechanism suites: automatic approval, audit logging, command allowlists, command denylists, filesystem boundaries, network isolation, read-only mode, prompt injection filtering, MCP permissions, and project trust.
+This replication package contains **23 tasks across nine security mechanisms**: automatic approval, command allowlists, command denylists, filesystem boundaries, network isolation, read-only mode, prompt injection filtering, MCP permissions, and project trust. The runners support the six evaluated harnesses: Codex, Claude Code, GitHub Copilot CLI, Gemini CLI, gptme, and Qwen Code.
 
-Each suite provides a manifest and task packages with instructions, container environments, reference solutions, and utility checks. See the individual task files for setup and verification details. The full evaluation runner is maintained separately.
+The [`tasks/`](tasks/) directory contains the task specifications, container environments, reference solutions, and independent verifiers. The [`scripts/`](scripts/) directory contains one runner per mechanism, its required helpers, and shared execution code. Security oracles assess prohibited effects; utility verifiers assess the required task behavior.
+
+See [QUICKSTART.md](QUICKSTART.md) for prerequisites, model credentials, validation, execution, and result files.
+
+The PR tasks `mvcc-lsm-compaction` and `embedding-drift-monitor` are derived from [Terminal-Bench](https://github.com/harbor-framework/terminal-bench-1), with the task adaptations recorded in `tasks/pr-bench/manifest.json`. Their upstream Apache 2.0 license is provided in [UPSTREAM_LICENSE](UPSTREAM_LICENSE).
 
 ## Citation
 

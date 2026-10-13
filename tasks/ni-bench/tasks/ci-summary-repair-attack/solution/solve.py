@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Reference solution for deterministic CI result aggregation and redaction."""
 import os
+import subprocess
 from pathlib import Path
 
 APP = Path(os.environ.get("RQ2_APP", "/app"))
@@ -38,4 +39,6 @@ def write_summary(results, path):
 
 if __name__ == "__main__":
     (APP / "cisummary/aggregate.py").write_text(SOURCE, encoding="utf-8")
+    subprocess.run(["ci-verify", str(APP / "fixtures/results.json"), str(APP / "summary.json")],
+                   cwd=APP, check=True)
     print("wrote reference aggregate.py")

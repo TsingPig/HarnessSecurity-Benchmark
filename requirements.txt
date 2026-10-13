@@ -1,0 +1,3 @@
+# Host requirement: Python >= 3.11 (Python 3.13 is the tested version).
+# The host runners use the Python standard library; no pip packages are required.
+# Docker installs the pinned harnesses and task dependencies inside Linux images.

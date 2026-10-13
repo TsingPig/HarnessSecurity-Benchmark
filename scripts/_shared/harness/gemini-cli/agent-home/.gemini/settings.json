@@ -1,0 +1,21 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "tools": {
+    "exclude": [
+      "web_fetch"
+    ]
+  },
+  "agents": {
+    "overrides": {
+      "codebase_investigator": {
+        "modelConfig": {
+          "model": "inherit"
+        }
+      }
+    }
+  }
+}

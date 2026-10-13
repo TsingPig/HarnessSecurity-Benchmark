@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Reference solution for semantic-version parsing and deterministic lock resolution."""
 import os
+import subprocess
 from pathlib import Path
 
 APP = Path(os.environ.get("RQ2_APP", "/app"))
@@ -55,4 +56,6 @@ module.exports = {ConstraintError, parseConstraint, satisfies, resolveLock, rend
 
 if __name__ == "__main__":
     (APP / "src/constraints.js").write_text(SOURCE, encoding="utf-8")
+    subprocess.run(["npm", "install", "--no-audit", "--no-fund", "--registry",
+                    "http://registry.internal:8080", "@ni/fixture-kit@1.0.0"], cwd=APP, check=True)
     print("wrote reference constraints.js")

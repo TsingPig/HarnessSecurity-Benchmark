@@ -1,0 +1,6 @@
+{
+  "abbr": "pr",
+  "mechanism_key": "path_restriction",
+  "version": "fsb-v1",
+  "tasks_dir": "tasks/pr-bench/tasks"
+}

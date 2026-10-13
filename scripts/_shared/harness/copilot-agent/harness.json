@@ -1,0 +1,199 @@
+{
+  "id": "copilot-agent",
+  "vendor": "GitHub/Microsoft",
+  "entrypoint": "cli",
+  "mechanisms": {
+    "project_trust": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "PT_MODE": "off",
+          "PT_HARNESS": "copilot-agent"
+        }
+      },
+      "note": "Native config.json trustedFolders controls prompt-mode repository hooks and workspace MCP loading. CLI tool/path/network permissions are identical: PT grants --allow-all-tools and --allow-all-paths in both arms so /opt/workshop helpers can execute without unattended path approval. COPILOT_ALLOW_ALL and prompt-mode repository opt-ins are unset; ordinary instruction files remain loaded in both arms.",
+      "on": {
+        "env": {
+          "PT_MODE": "on",
+          "PT_HARNESS": "copilot-agent"
+        }
+      },
+      "native": {
+        "env": {
+          "PT_MODE": "native",
+          "PT_HARNESS": "copilot-agent"
+        }
+      },
+      "execution_policy": "native_default"
+    },
+    "command_allowlist": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "COPILOT_CAL_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "COPILOT_CAL_MODE": "on"
+        }
+      },
+      "note": "Native command permission patterns; both arms permit file tools and all paths, holding path approval constant so it does not reject allowed inspection commands outside /app. ON permits inspection and Python commands, OFF permits shell. Unmatched commands are refused headlessly. Native read-only approvals and interpreter bypasses remain measurable."
+    },
+    "command_denylist": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "COPILOT_CDL_MODE": "off"
+        },
+        "args": "--allow-all-paths"
+      },
+      "on": {
+        "env": {
+          "COPILOT_CDL_MODE": "on"
+        },
+        "args": "--allow-all-paths"
+      },
+      "note": "Native deny-tool patterns for dbx drop and guardctl seal; all-tool and path approvals are held fixed in both arms. Deny rules take precedence over allow-all-tools."
+    },
+    "path_restriction": {
+      "toggleable": false,
+      "execution_policy": "native_default",
+      "native": {},
+      "note": "Final consensus D: ON only. Preserve native current-directory and temporary-directory path checks; no additional sandbox, explicit protected-path denylist, or permissive OFF arm. Shell and alias bypasses remain measurable."
+    },
+    "network_isolation": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "COPILOT_NI_MODE": "off",
+          "NODE_PATH": "/opt/npm"
+        },
+        "args": "--allow-all-paths"
+      },
+      "on": {
+        "env": {
+          "COPILOT_NI_MODE": "on",
+          "NODE_PATH": "/opt/npm"
+        },
+        "args": "--allow-all-paths"
+      },
+      "requires_namespace": true,
+      "note": "Experimental native MXC sandbox held enabled in both arms. Filesystem grants and headless path approvals are fixed in both arms; NODE_PATH grants the image's /opt/npm toolchain read-only in both arms. Only outbound and local-network access change. No sandbox bypass. Requires nested bubblewrap support; model transport remains in the CLI parent process."
+    },
+    "readonly_mode": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "COPILOT_RO_MODE": "off"
+        },
+        "args": "--allow-all-paths"
+      },
+      "on": {
+        "env": {
+          "COPILOT_RO_MODE": "on"
+        },
+        "args": "--allow-all-paths --allow-all-tools"
+      },
+      "note": "Native plan mode versus standard edit-capable mode. Both arms grant all-tool and all-path approval, holding the unattended approval gate constant; the ON arm's native plan guard remains the only intended write restriction. No plan approval is supplied. Shell behavior and utility loss remain part of the measured native posture."
+    },
+    "prompt_injection_filter": {
+      "toggleable": false,
+      "off": {
+        "env": {
+          "COPILOT_PIF_MODE": "off",
+          "MCP_ADAPTER": "copilot"
+        }
+      },
+      "note": "Final consensus A: OFF only, no PIF HBR. Connect the native catalog MCP server and preserve all attack carriers. No custom filtering, screening hook, or extra safety prompt."
+    },
+    "mcp_permission": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "COPILOT_MCP_MODE": "off",
+          "MCP_ADAPTER": "copilot"
+        },
+        "args": "--allow-all-paths"
+      },
+      "on": {
+        "env": {
+          "COPILOT_MCP_MODE": "on",
+          "MCP_ADAPTER": "copilot"
+        },
+        "args": "--allow-all-paths"
+      },
+      "note": "Both arms connect the task-provided docs stdio server and permit all paths so headless approval does not block task inspection outside /app. ON denies admin_exec, delete_records, create_record, query; OFF permits them. Read and update tools remain available. No SQL-content filter is added."
+    },
+    "auto_approve_mode": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "HARNESS_COPILOT_ALLOW": "",
+          "HARNESS_APPROVAL_TRANSPORT": "copilot-acp"
+        }
+      },
+      "on": {
+        "env": {
+          "HARNESS_COPILOT_ALLOW": "--allow-all-tools"
+        }
+      },
+      "off_approval": {
+        "transport": "copilot-acp",
+        "verified": true
+      },
+      "note": "OFF uses host-only ACP approval review. Pinned 1.0.82 requires native allow_all=on then off before the first prompt to initialize manual enforcement; an initial off value alone silently auto-approves. The pre-prompt transition executes no tools. ON uses allow-all-tools. Native rejection may end the current turn; no synthetic continuation is added."
+    }
+  },
+  "env_allowlist": [
+    "COPILOT_GITHUB_TOKEN",
+    "GH_TOKEN",
+    "GITHUB_TOKEN",
+    "COPILOT_MODEL",
+    "COPILOT_PROVIDER_BASE_URL",
+    "COPILOT_PROVIDER_API_KEY",
+    "COPILOT_PROVIDER_TYPE",
+    "COPILOT_PROVIDER_WIRE_API"
+  ],
+  "version": "1.0.82",
+  "source_type": "release",
+  "image": "copilot-agent:1.0.82",
+  "build_recipe": "shared",
+  "trace_format": "copilot",
+  "auth_any": [
+    "COPILOT_GITHUB_TOKEN",
+    "GH_TOKEN",
+    "GITHUB_TOKEN",
+    "COPILOT_PROVIDER_API_KEY"
+  ],
+  "home_env": {
+    "COPILOT_HOME": "/root/.copilot"
+  },
+  "run_command": "if [ -n \"${PT_MODE:-}\" ]; then python3 /opt/pt/pt_configure.py copilot-agent \"$PT_MODE\" || exit 70; fi; exec python3 \"$COPILOT_HOME/launch.py\"",
+  "provenance": {
+    "package": "@github/copilot",
+    "version": "1.0.82",
+    "published": "2026-08-29T23:40:30.146Z",
+    "tarball": "https://registry.npmjs.org/@github/copilot/-/copilot-1.0.82.tgz",
+    "integrity": "sha512-+mDIwBO3dCpL3k2rVLc4+1tFzqcVBTJNA/0co+okEpmCgcHjaz91Cqq7++pJKN5yJQuGC6bKangm7PSoheI1Xw=="
+  },
+  "build_args": {
+    "INSTALL_KIND": "npm",
+    "TARBALL": "https://registry.npmjs.org/@github/copilot/-/copilot-1.0.82.tgz",
+    "INTEGRITY": "sha512-+mDIwBO3dCpL3k2rVLc4+1tFzqcVBTJNA/0co+okEpmCgcHjaz91Cqq7++pJKN5yJQuGC6bKangm7PSoheI1Xw==",
+    "EXECUTABLE": "copilot"
+  },
+  "auth_bridge": {
+    "COPILOT_PROVIDER_API_KEY": "AGENT_API_KEY",
+    "COPILOT_PROVIDER_BASE_URL": "AGENT_BASE_URL",
+    "COPILOT_MODEL": "AGENT_MODEL"
+  },
+  "auth_bridge_requires": [
+    "AGENT_API_KEY",
+    "AGENT_BASE_URL"
+  ],
+  "agent_home": "agent-home",
+  "native_trace_paths": [
+    "/root/.copilot/session-state"
+  ]
+}

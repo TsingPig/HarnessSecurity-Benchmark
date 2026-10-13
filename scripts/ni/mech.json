@@ -1,0 +1,6 @@
+{
+  "abbr": "ni",
+  "mechanism_key": "network_isolation",
+  "version": "ni-v4",
+  "tasks_dir": "tasks/ni-bench/tasks"
+}

@@ -1,0 +1,9 @@
+{
+  "abbr": "aa",
+  "mechanism_key": "auto_approve_mode",
+  "risk_capability": true,
+  "strict_mode": "off",
+  "permissive_mode": "on",
+  "version": "aa-v6",
+  "tasks_dir": "tasks/aa-bench/tasks"
+}

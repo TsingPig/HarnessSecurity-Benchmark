@@ -1,0 +1,197 @@
+{
+  "id": "qwen",
+  "vendor": "Alibaba",
+  "version": "0.22.3",
+  "entrypoint": "cli",
+  "source_type": "release",
+  "image": "qwen:0.22.3",
+  "build_recipe": "shared",
+  "build_args": {
+    "INSTALL_KIND": "npm",
+    "TARBALL": "https://registry.npmjs.org/@qwen-code/qwen-code/-/qwen-code-0.22.3.tgz",
+    "INTEGRITY": "sha512-8Ngy/ZEn+idOyN3k52K9TNu/XSkNfS2hyzsikeSDe79kRd2/eMYbWLOZq6LHSGVYXVNpY6ktpfZLthxY5AHWeA==",
+    "EXECUTABLE": "qwen"
+  },
+  "provenance": {
+    "package": "@qwen-code/qwen-code",
+    "version": "0.22.3",
+    "published": "2026-08-28T17:30:35.909Z"
+  },
+  "run_command": "if [ -n \"${PT_MODE:-}\" ]; then export QWEN_HOME=/root/.qwen; mkdir -p \"$QWEN_HOME\"; cp /root/.agent-preload/launch.py \"$QWEN_HOME/launch.py\"; python3 /opt/pt/pt_configure.py qwen \"$PT_MODE\" || exit 70; fi; exec python3 \"$QWEN_HOME/launch.py\"",
+  "mechanisms": {
+    "project_trust": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "PT_MODE": "off",
+          "PT_HARNESS": "qwen"
+        }
+      },
+      "note": "Native Folder Trust is enabled in both arms. Same default approval mode and explicit user-level file/shell permissions; project settings and .env are filtered only in ON. The optional known music MCP server has the same hash-bound native approval in both arms.",
+      "on": {
+        "env": {
+          "PT_MODE": "on",
+          "PT_HARNESS": "qwen"
+        }
+      },
+      "native": {
+        "env": {
+          "PT_MODE": "native",
+          "PT_HARNESS": "qwen"
+        }
+      },
+      "execution_policy": "native_default"
+    },
+    "command_allowlist": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_CAL_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_CAL_MODE": "on"
+        }
+      },
+      "note": "Native default approval in headless mode; explicit run_shell_command permission patterns, same file-tool permissions in both arms. Unmatched commands requiring approval are declined. Built-in read-only approvals and interpreter/wrapper bypasses remain native behavior. tools.core is not used as a command-prefix gate."
+    },
+    "command_denylist": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_CDL_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_CDL_MODE": "on"
+        }
+      },
+      "note": "Native command deny patterns; yolo is held fixed. guardctl seal, dbx drop and compound-command calibration passed."
+    },
+    "path_restriction": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_PR_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_PR_MODE": "on"
+        }
+      },
+      "note": "Native Read/Write/Edit rules for the frozen protected subtree. Tool/path-level restriction; not OS containment of opaque helper executables. Direct protected writes calibrated."
+    },
+    "readonly_mode": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_RO_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_RO_MODE": "on"
+        }
+      },
+      "note": "Native plan mode versus yolo. Direct write denial calibrated; other plan-mode tool behavior remains part of the measured implementation."
+    },
+    "prompt_injection_filter": {
+      "toggleable": false,
+      "execution_policy": "native_default",
+      "native": {
+        "env": {
+          "MCP_ADAPTER": "qwen",
+          "QWEN_PIF_MODE": "native"
+        }
+      },
+      "note": "Catalog access is enabled for the PIF task without adding a prompt-injection filter."
+    },
+    "mcp_permission": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_MCP_MODE": "off",
+          "MCP_ADAPTER": "qwen",
+          "MCP_DENY_ADMIN": "0"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_MCP_MODE": "on",
+          "MCP_ADAPTER": "qwen",
+          "MCP_DENY_ADMIN": "1"
+        }
+      },
+      "note": "Native stdio docs server and excludeTools. admin_exec present OFF and absent ON; docs_search remains present in both arms. Reviewer is not substituted for MCP tool filtering."
+    },
+    "auto_approve_mode": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_AA_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_AA_MODE": "on"
+        }
+      },
+      "off_approval": {
+        "transport": "qwen-acp",
+        "verified": true
+      },
+      "note": "OFF uses the native ACP request_permission channel and the host reviewer. Live allow_once completed with exit 0 and no fail-closed. ON uses yolo. Consensus O retained; AUTO default versus YOLO semantics are not silently reclassified."
+    },
+    "network_isolation": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "QWEN_NI_MODE": "off"
+        }
+      },
+      "on": {
+        "env": {
+          "QWEN_NI_MODE": "on"
+        }
+      },
+      "note": "Both arms use the native Docker sandbox. OFF joins the trial service network. ON invokes the native proxy/internal-network path with only the HTTPS model endpoint allowed. Service hostname and direct-IP probes fail ON; model requests succeed in both arms."
+    }
+  },
+  "agent_home": "agent-home",
+  "home_env": {
+    "QWEN_HOME": "/app/.qwen-home"
+  },
+  "trace_format": "qwen",
+  "auth_any": [
+    "OPENAI_API_KEY"
+  ],
+  "env_allowlist": [
+    "AGENT_API_KEY",
+    "AGENT_BASE_URL",
+    "AGENT_MODEL",
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL"
+  ],
+  "auth_bridge": {
+    "OPENAI_API_KEY": "AGENT_API_KEY",
+    "OPENAI_BASE_URL": "AGENT_BASE_URL"
+  },
+  "auth_bridge_requires": [
+    "AGENT_API_KEY",
+    "AGENT_BASE_URL"
+  ],
+  "task_build_args": {
+    "ni-bench": {
+      "APT_PACKAGES": "docker.io curl"
+    },
+    "ni-bench/ci-summary-repair": {
+      "APT_PACKAGES": "docker-cli curl"
+    }
+  },
+  "native_trace_paths": [
+    "/app/.qwen-home/projects"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "abbr": "pt",
+  "mechanism_key": "project_trust",
+  "version": "pt-v2",
+  "tasks_dir": "tasks/pt-bench/tasks"
+}

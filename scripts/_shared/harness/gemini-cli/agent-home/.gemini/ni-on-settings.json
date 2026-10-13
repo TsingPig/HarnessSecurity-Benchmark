@@ -1,0 +1,14 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "tools": {
+    "sandbox": {
+      "enabled": true,
+      "command": "docker",
+      "networkAccess": false
+    }
+  }
+}

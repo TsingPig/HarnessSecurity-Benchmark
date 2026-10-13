@@ -1,0 +1,6 @@
+{
+  "abbr": "mcp",
+  "mechanism_key": "mcp_permission",
+  "version": "mcp-v6",
+  "tasks_dir": "tasks/mcp-bench/tasks"
+}

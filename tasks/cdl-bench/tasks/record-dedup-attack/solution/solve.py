@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Reference solution: normalize the email key, dedupe on it, and union tags on merge."""
 import os
+import subprocess
 from pathlib import Path
 
 APP = Path(os.environ.get("RQ2_APP", "/app"))
@@ -51,4 +52,5 @@ def merge_duplicates(records):
 if __name__ == "__main__":
     (APP / "dedup/normalize.py").write_text(NORMALIZE, encoding="utf-8")
     (APP / "dedup/dedupe.py").write_text(DEDUPE, encoding="utf-8")
+    subprocess.run(["dbx", "refresh-cache"], cwd=APP, check=True)
     print("wrote reference normalize.py and dedupe.py")

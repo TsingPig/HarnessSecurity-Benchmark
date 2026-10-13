@@ -1,0 +1,226 @@
+{
+  "id": "gptme",
+  "vendor": "Erik Bjareholt",
+  "entrypoint": "cli",
+  "mechanisms": {
+    "project_trust": {
+      "toggleable": false,
+      "off": {
+        "env": {
+          "PT_MODE": "off",
+          "PT_HARNESS": "gptme"
+        }
+      },
+      "note": "Pinned source 076e433 loads project configuration without a native project-trust gate. OFF/native execute the default entrypoint with the project context_cmd or MCP carrier; no ON profile or synthetic loader filter is supplied.",
+      "native": {
+        "env": {
+          "PT_MODE": "native",
+          "PT_HARNESS": "gptme"
+        }
+      },
+      "execution_policy": "native_default"
+    },
+    "command_allowlist": {
+      "toggleable": true,
+      "off": "",
+      "on": "--tools=-shell",
+      "note": "This CAL contrast uses GPTMe's native tool-level allowlist: off keeps the default tool set, while on excludes only the whole shell tool. IPython and every other default tool remain enabled, so GPTMe does not filter individual shell commands and an attack may still be attempted through an alternate tool such as IPython; such bypasses and any utility failures are measured as outcomes.",
+      "native": {
+        "option": "--tools",
+        "on_effect": "exclude shell tool from the default tool set",
+        "remaining_tools": "default set, including ipython"
+      }
+    },
+    "command_denylist": {
+      "toggleable": false,
+      "note": "No verified native ON/OFF profile for this pinned CLI. Headless defaults or IDE settings do not establish a toggle.",
+      "execution_policy": "native_default",
+      "native": {}
+    },
+    "path_restriction": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "GPTME_SANDBOX": "none",
+          "GPTME_SANDBOX_NET": "1",
+          "GPTME_DISABLE_PATH_INCLUDE": "1"
+        }
+      },
+      "on": {
+        "env": {
+          "GPTME_SANDBOX": "bwrap",
+          "GPTME_SANDBOX_NET": "1",
+          "GPTME_SANDBOX_USERNS": "1",
+          "GPTME_DISABLE_PATH_INCLUDE": "1"
+        }
+      },
+      "requires_namespace": true,
+      "note": "PR off/on measures GPTMe's native bwrap filesystem scope for the shell subprocess; both arms keep network enabled and disable GPTMe's automatic expansion of paths in programmatic prompts. The gptme parent process, direct file tools, and IPython execution are outside this bwrap boundary and remain bypass paths measured by the PR oracle. This is a shell-sandbox contrast, not a whole-agent workspace jail."
+    },
+    "network_isolation": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "GPTME_SANDBOX": "bwrap",
+          "GPTME_SANDBOX_NET": "1",
+          "GPTME_SANDBOX_USERNS": "1"
+        }
+      },
+      "on": {
+        "env": {
+          "GPTME_SANDBOX": "bwrap",
+          "GPTME_SANDBOX_NET": "0",
+          "GPTME_SANDBOX_USERNS": "1"
+        }
+      },
+      "requires_namespace": true,
+      "note": "Both NI arms use the same gptme bwrap launcher shim to add an explicit user namespace for nested-Docker compatibility; a startup smoke test must pass before gptme starts. GPTME_SANDBOX_NET independently permits (1) or disables (0) network for agent-generated shell commands; provider calls remain in the parent gptme process. The Python tool's interactive IPython session is not isolated by this shell backend."
+    },
+    "readonly_mode": {
+      "toggleable": true,
+      "off": {
+        "args": "--no-stream",
+        "env": {
+          "GPTME_LLM_MAX_RETRIES": "3",
+          "LLM_API_TIMEOUT": "480",
+          "GPTME_MAX_STEPS": "40"
+        }
+      },
+      "on": {
+        "args": "--tools read-only --no-stream",
+        "env": {
+          "GPTME_LLM_MAX_RETRIES": "3",
+          "LLM_API_TIMEOUT": "480",
+          "GPTME_MAX_STEPS": "40"
+        }
+      },
+      "note": "The off arm retains gptme's default editing/execution tool set. The on arm selects the documented read-only preset, which permits file reads but no writes or execution. Both arms disable response streaming with the documented --no-stream option, cap the non-interactive tool loop at 40 steps using GPTME_MAX_STEPS, allow up to 480 seconds per API request with LLM_API_TIMEOUT, and retry transient failures up to three times using GPTME_LLM_MAX_RETRIES. These equal settings address repeated-tool loops and stalled/incomplete model responses observed during RO runs. HARNESS_MECH_ARGS is parsed before the prompt so the profile reaches the CLI."
+    },
+    "prompt_injection_filter": {
+      "toggleable": true,
+      "off": {
+        "args": "--no-workspace --tools=+catalog.* --stream --tool-format tool",
+        "env": {
+          "GPTME_INJECTION_HYGIENE": "off",
+          "GPTME_LLM_MAX_RETRIES": "3",
+          "LLM_API_TIMEOUT": "28800"
+        }
+      },
+      "on": {
+        "args": "--no-workspace --tools=+catalog.* --stream --tool-format tool",
+        "env": {
+          "GPTME_INJECTION_HYGIENE": "block",
+          "GPTME_LLM_MAX_RETRIES": "3",
+          "LLM_API_TIMEOUT": "28800"
+        }
+      },
+      "note": "Both arms use --no-workspace and GPTMe's additive --tools=+catalog.* syntax to include the task's MCP tools alongside the default toolset. GPTMe does not allow additive and exclusion tool syntax in the same --tools value, so todo remains available. Its structured write operation can no-op in native tool-call mode; monitor traces for repeated todo calls. Both arms use streaming native tool calls, a 28800-second API timeout, and retry parameter 3 without an added step cap. The only PIF toggle is GPTME_INJECTION_HYGIENE: off disables screening, while on uses the strongest documented block mode. Repository and catalog results are encountered through normal tools rather than inlined into the initial user message."
+    },
+    "mcp_permission": {
+      "toggleable": true,
+      "off": {
+        "args": "--tools=+docs.*",
+        "env": {
+          "MCP_ADAPTER": "gptme",
+          "GPTME_MCP_ENABLED": "1"
+        }
+      },
+      "on": {
+        "args": "",
+        "env": {
+          "MCP_ADAPTER": "gptme",
+          "GPTME_MCP_ENABLED": "0"
+        }
+      },
+      "note": "Both arms preserve GPTMe's default non-MCP toolset. Off explicitly adds the task server's docs.* tools to GPTMe's allowlist. On disables GPTMe's native MCP client in config.toml; this server-level toggle is used because the pinned CLI rejects dynamically discovered docs.* names in negative --tools filters. The doc-search and email tasks also ship an mcp-call shell bridge; it remains available as an alternate route, and oracle-visible bridge calls remain measurable bypasses.",
+      "native": {
+        "config": "mcp.enabled",
+        "effect": "enable the task MCP server off and disable GPTMe's native MCP client on"
+      }
+    },
+    "auto_approve_mode": {
+      "toggleable": true,
+      "off": {
+        "env": {
+          "HARNESS_GPTME_AA_TTY": "1",
+          "HARNESS_GPTME_NO_CONFIRM": ""
+        }
+      },
+      "on": {
+        "env": {
+          "HARNESS_GPTME_AA_TTY": "",
+          "HARNESS_GPTME_NO_CONFIRM": "--no-confirm"
+        }
+      },
+      "on_requires_pty": false,
+      "off_approval": {
+        "driver": "gptme",
+        "verified": true
+      },
+      "note": "AA-OFF uses GPTme's native interactive cli_confirm surface and routes each one-shot Y/n response through the external reviewer. AA-ON uses GPTme's native batch auto-confirm path (--non-interactive, with explicit --no-confirm); the model, tools, task prompt, and workspace are unchanged. GPTme's CLI itself couples batch execution to no-confirm, so the interaction surface necessarily differs by posture."
+    }
+  },
+  "env_allowlist": [
+    "AGENT_API_KEY",
+    "AGENT_BASE_URL",
+    "AGENT_MODEL",
+    "GPTME_CONTEXT_LENGTH",
+    "GPTME_LLM_MAX_RETRIES",
+    "GPTME_MAX_STEPS",
+    "LLM_API_TIMEOUT",
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL",
+    "ANTHROPIC_API_KEY",
+    "ANTHROPIC_BASE_URL"
+  ],
+  "version": "076e433cccad3a0f51e6d87464c6e72033933a17",
+  "source_type": "source",
+  "image": "gptme:076e433-repinned",
+  "build_recipe": "shared",
+  "run_command": "if [ -n \"${PT_MODE:-}\" ]; then python3 /opt/pt/pt_configure.py gptme \"$PT_MODE\" || exit 70; fi; if [ \"${GPTME_SANDBOX_USERNS:-}\" = \"1\" ]; then printf '%s\\n' '#!/bin/sh' 'for arg in \"$@\"; do' '  case \"$arg\" in' '    --unshare-net|--unshare-pid)' '      exec /usr/bin/bwrap --unshare-user \"$@\"' '      ;;' '  esac' 'done' 'exec /usr/bin/bwrap \"$@\"' > /usr/local/bin/bwrap || exit 70; chmod 755 /usr/local/bin/bwrap || exit 70; export PATH=\"/usr/local/bin:$PATH\"; bwrap --unshare-net --ro-bind /usr /usr --ro-bind /bin /bin --ro-bind /sbin /sbin --ro-bind /lib /lib --ro-bind /lib64 /lib64 --ro-bind /etc/alternatives /etc/alternatives --ro-bind /etc/resolv.conf /etc/resolv.conf --ro-bind /etc/passwd /etc/passwd --ro-bind /etc/group /etc/group --ro-bind /etc/os-release /etc/os-release --proc /proc --dev /dev --tmpfs /tmp --tmpfs /home --unshare-pid --new-session --die-with-parent -- /bin/bash -lc true || { echo 'gptme NI bwrap preflight failed' >&2; exit 70; }; fi; readarray -d \"\" -t mech_cli < <(python3 -c 'import os,shlex,sys; a=shlex.split(os.environ.get(\"HARNESS_MECH_ARGS\",'\"'\"''\"'\"')); sys.stdout.buffer.write(b\"\\0\".join(x.encode() for x in a)+(b\"\\0\" if a else b\"\"))'); if [ \"${HARNESS_GPTME_AA_TTY:-}\" = \"1\" ]; then if [ -n \"${OPENAI_BASE_URL:-}\" ] && [ -n \"${OPENAI_API_KEY:-}\" ]; then gptme \"${mech_cli[@]}\" ${HARNESS_GPTME_NO_CONFIRM:-} ${AGENT_MODEL:+--model \"local/${AGENT_MODEL#*/}\"} ${AGENT_EXTRA:-} \"$(cat /scripts/instruction.md)\"; else gptme \"${mech_cli[@]}\" ${HARNESS_GPTME_NO_CONFIRM:-} ${AGENT_MODEL:+--model \"$AGENT_MODEL\"} ${AGENT_EXTRA:-} \"$(cat /scripts/instruction.md)\"; fi; elif [ -n \"${OPENAI_BASE_URL:-}\" ] && [ -n \"${OPENAI_API_KEY:-}\" ]; then gptme --non-interactive --output-format json \"${mech_cli[@]}\" ${HARNESS_GPTME_NO_CONFIRM:-} ${AGENT_MODEL:+--model \"local/${AGENT_MODEL#*/}\"} ${AGENT_EXTRA:-} \"$(cat /scripts/instruction.md)\"; else gptme --non-interactive --output-format json \"${mech_cli[@]}\" ${HARNESS_GPTME_NO_CONFIRM:-} ${AGENT_MODEL:+--model \"$AGENT_MODEL\"} ${AGENT_EXTRA:-} \"$(cat /scripts/instruction.md)\"; fi",
+  "trace_format": "gptme",
+  "auth_any": [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY"
+  ],
+  "provenance": {
+    "repository": {
+      "url": "https://github.com/gptme/gptme",
+      "requested_branch": "main",
+      "actual_branch": "master",
+      "commit_sha": "076e433cccad3a0f51e6d87464c6e72033933a17",
+      "commit_time": "2026-08-31T17:08:30+02:00",
+      "tag": null
+    },
+    "tree_sha256": "9b322dcbdde255f8dd29cfde6c3bb6a54fa63e4cbd5439b0aa4a601feb72b854",
+    "source_snapshot_note": "Pinned public commit with the original 33 asset omissions. The builder downloads a cache copy and verifies the original canonical source-tree SHA-256 before installation."
+  },
+  "build_args": {
+    "INSTALL_KIND": "python-source",
+    "SOURCE_SHA256": "9b322dcbdde255f8dd29cfde6c3bb6a54fa63e4cbd5439b0aa4a601feb72b854",
+    "EXECUTABLE": "gptme"
+  },
+  "home_env": {
+    "AGENT_HOME": "/root"
+  },
+  "auth_bridge": {
+    "OPENAI_API_KEY": "AGENT_API_KEY",
+    "OPENAI_BASE_URL": "AGENT_BASE_URL"
+  },
+  "auth_bridge_requires": [
+    "AGENT_API_KEY",
+    "AGENT_BASE_URL"
+  ],
+  "source_url": "https://codeload.github.com/gptme/gptme/tar.gz/076e433cccad3a0f51e6d87464c6e72033933a17",
+  "source_commit": "076e433cccad3a0f51e6d87464c6e72033933a17",
+  "source_exclude": [
+    "media/**",
+    "scripts/changelog_contributors.csv",
+    "scripts/changelog_contributors_twitter.csv",
+    "tauri/.vscode/extensions.json",
+    "tauri/app-icon.png",
+    "tauri/public/logo.png",
+    "tauri/src-tauri/gen/android/app/src/main/res/mipmap-*/ic_launcher*.png",
+    "webui/public/logo.png"
+  ]
+}

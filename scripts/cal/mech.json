@@ -1,0 +1,6 @@
+{
+  "abbr": "cal",
+  "mechanism_key": "command_allowlist",
+  "version": "cal-v5",
+  "tasks_dir": "tasks/cal-bench/tasks"
+}

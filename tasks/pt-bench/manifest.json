@@ -9,7 +9,6 @@
     "off",
     "on"
   ],
-  "taxonomy": "scripts/RQ2/attack_surfaces.json",
   "covered_surfaces": [
     "agent_instructions",
     "configuration",
@@ -22,7 +21,7 @@
     "attack_noise": "Only optional project resources differ between clean and attack conditions; function stubs, fixtures, user requirements, reference solutions, and utility verifiers are identical.",
     "on_semantics": "The harness's native project-trust gate is configured without changing ordinary execution permissions. Unsupported or blocked-startup behavior is recorded separately."
   },
-  "provenance": "All four task specifications, source stubs, fixtures, reference solutions, payloads and functional verifiers are project-authored; no upstream task is adapted.",
+  "provenance": "Four project-authored tasks include source stubs, fixtures, reference solutions, payloads and functional verifiers.",
   "cases": [
     {
       "task_id": "constellation-postcard",
@@ -53,27 +52,6 @@
       "references": [],
       "selection_reason": "Original local implementation task with an optional project-controlled resource.",
       "provenance": "Task, fixture, contract, reference, verifier and attack bytes newly authored for PT-Bench.",
-      "upstream_files": {
-        "environment/cli.py": "0ebb8afba9b13c61ff5d537f29b012717bb477a98b791a8452c253ed657774a5",
-        "environment/Dockerfile": "efb902424f2ce9266513b7984fa26bdd357ab80436d55e26f85c6fb19f28ee99",
-        "environment/fixtures/scene.json": "33d7dc0cb780665e8a182d7bb6612bf6624a1053cfe3e5a89da9f3c2b70b2ab1",
-        "environment/project_helper.py": "3e712c6c6bd6fbf0da368ffa9fdb1ac6551bdc567a019f2e7756726a18673800",
-        "environment/pt_configure.py": "322e4834cbec9a326659d431a04b627dcfe4986d6df545efa06b898fb5e597c8",
-        "environment/resource.json": "fdc2bcc62792dc9bb9d9e80f6e2fea53af0db9033e6fc5bdc33e8e552b81cd84",
-        "environment/workshop.py": "827b3592979283208be1cbaadaa07cc80eff3dc94c4cbd4819d7ef30ae1490ad",
-        "instruction.md": "15a25899444aee88c04344e312d80554ab0a83445ead69aeed165e986c406146",
-        "service/Dockerfile": "c0f5443e55bdb5ecfa74e283d63eadbf6a30d71f3a7264e518b70893808f1832",
-        "service/service.py": "d39beaed927178632dd9893828311e122f6d352201330d399bb7b66e84d75fc7",
-        "solution/reference.py": "492742032f26feb032acc6115643e6070162bd3af23257efa4d049d5032529a9",
-        "task.toml": "95df52e7b52523f24b076baa02650da9972923bc106863ee7ed25c24a6ff6f07",
-        "tests/Dockerfile": "6dc2ed6a4c8516328a108ff3b5dc6443e22008965712b6f0dc0f3a9df94cff2e",
-        "tests/test.sh": "8868a36081ded0ebaa1f0b6ee6bb8f94cabfd16d5a3fb6763984597087919b5b",
-        "tests/utility_oracles.json": "0d34f91efe979c4ed4f9c09da333764efd70b0a47bb5e2c4332cfa8e48ac35f2",
-        "tests/verifier_common.py": "e6ca7ae72a712ce6933f9ffc718b0c4b2b3d85fc99c5310009cb793da6d25458",
-        "tests/verify.py": "f28bb3e6f442eb8f7183a61338d99a66fa3da4750835d569dda4c158053f336e"
-      },
-      "generation": "Fixed literature-inspired authoring; no target feedback or best-of selection",
-      "validation_status": "static validation only; runtime evidence is reported separately",
       "sidecars": [
         {
           "id": "evidence",
@@ -168,27 +146,6 @@
       "references": [],
       "selection_reason": "Original local implementation task with an optional project-controlled resource.",
       "provenance": "Task, fixture, contract, reference, verifier and attack bytes newly authored for PT-Bench.",
-      "upstream_files": {
-        "environment/cli.py": "2f8c73e45ead91bfe71202dee4d1d15238871d22c2cce8a5e2f069e00e394252",
-        "environment/Dockerfile": "efb902424f2ce9266513b7984fa26bdd357ab80436d55e26f85c6fb19f28ee99",
-        "environment/fixtures/pet.json": "ca4f0cc5f6d593b0441f5468c32e26ae5623e4de8bb9d71ca4dfe2523074046a",
-        "environment/project_helper.py": "3e712c6c6bd6fbf0da368ffa9fdb1ac6551bdc567a019f2e7756726a18673800",
-        "environment/pt_configure.py": "322e4834cbec9a326659d431a04b627dcfe4986d6df545efa06b898fb5e597c8",
-        "environment/resource.json": "0ddcb8caea7f9c8579bd0d1775b0cc0ca9d4496cba5eac9db0523e5dc611d611",
-        "environment/workshop.py": "c02d21cd467d84cd0745b1ceab5f72d6a9da2f479b354a33adfc9d14dc063b4e",
-        "instruction.md": "c16f49323be75148b56d299a2da3b7326b5183006098ac1f4a666c28edf89148",
-        "service/Dockerfile": "c0f5443e55bdb5ecfa74e283d63eadbf6a30d71f3a7264e518b70893808f1832",
-        "service/service.py": "d39beaed927178632dd9893828311e122f6d352201330d399bb7b66e84d75fc7",
-        "solution/reference.py": "c90e3cda58fa29983bda800f1145beec1f605aa4b62183f16f64238c662ac47f",
-        "task.toml": "70c7bfdf217bb08d9bd921f2b0a71bd386b91a3dacb9e8b8ad0050a6175f04e6",
-        "tests/Dockerfile": "6dc2ed6a4c8516328a108ff3b5dc6443e22008965712b6f0dc0f3a9df94cff2e",
-        "tests/test.sh": "8868a36081ded0ebaa1f0b6ee6bb8f94cabfd16d5a3fb6763984597087919b5b",
-        "tests/utility_oracles.json": "44bb47ce5a9bfda632802b355983bc9701b0fdff9dde32ff4379f185d1b70174",
-        "tests/verifier_common.py": "e6ca7ae72a712ce6933f9ffc718b0c4b2b3d85fc99c5310009cb793da6d25458",
-        "tests/verify.py": "dd527185d4644d9d1b09478115cdf34b4b397b93f0c09d03038b662814c4db18"
-      },
-      "generation": "Fixed literature-inspired authoring; no target feedback or best-of selection",
-      "validation_status": "static validation only; runtime evidence is reported separately",
       "sidecars": [
         {
           "id": "evidence",
@@ -297,27 +254,6 @@
       "references": [],
       "selection_reason": "Original local implementation task with an optional project-controlled resource.",
       "provenance": "Task, fixture, contract, reference, verifier and attack bytes newly authored for PT-Bench.",
-      "upstream_files": {
-        "environment/cli.py": "aac90643b85b277761527cf2b964bcd13e3287d9a2e65f4d8af6840e1c706ded",
-        "environment/Dockerfile": "efb902424f2ce9266513b7984fa26bdd357ab80436d55e26f85c6fb19f28ee99",
-        "environment/fixtures/notes.json": "1f042a5c9645e2294148d616ba4063f61f2aef5b89ef2c388c866ba6fb59fa48",
-        "environment/project_helper.py": "3e712c6c6bd6fbf0da368ffa9fdb1ac6551bdc567a019f2e7756726a18673800",
-        "environment/pt_configure.py": "322e4834cbec9a326659d431a04b627dcfe4986d6df545efa06b898fb5e597c8",
-        "environment/resource.json": "ee0173fba0ce56d75b5e74ae80036f3673e5dc7198885835a985c53fee3a683e",
-        "environment/workshop.py": "f8dfb0199ea9dd1ec12a51a8af62d3ab1b6b2ffa5ba6e1d00a68105d5b726aea",
-        "instruction.md": "0d74144c5647b937150f035e249821a59f1e351296f8dde7f03b57560acf0fe8",
-        "service/Dockerfile": "c0f5443e55bdb5ecfa74e283d63eadbf6a30d71f3a7264e518b70893808f1832",
-        "service/service.py": "d39beaed927178632dd9893828311e122f6d352201330d399bb7b66e84d75fc7",
-        "solution/reference.py": "479332e4d166dce09f05bcbcbfd4ac2bcc7b0c439033f0cb79bac3b7d0c70208",
-        "task.toml": "35acc3d275cf8d1078ded5058fe6fa4de3988fe1e18bd9e9215581514cd03711",
-        "tests/Dockerfile": "6dc2ed6a4c8516328a108ff3b5dc6443e22008965712b6f0dc0f3a9df94cff2e",
-        "tests/test.sh": "8868a36081ded0ebaa1f0b6ee6bb8f94cabfd16d5a3fb6763984597087919b5b",
-        "tests/utility_oracles.json": "5e1626981f9b55b511f1040f2fb375df0281d4e7467dd200fc8717e4770ee803",
-        "tests/verifier_common.py": "e6ca7ae72a712ce6933f9ffc718b0c4b2b3d85fc99c5310009cb793da6d25458",
-        "tests/verify.py": "35b0396dc4694e17ba8b5797ac63ef09dab7cad6268193e6d40d1321a9bf9edd"
-      },
-      "generation": "Fixed literature-inspired authoring; no target feedback or best-of selection",
-      "validation_status": "static validation only; runtime evidence is reported separately",
       "sidecars": [
         {
           "id": "evidence",
@@ -427,27 +363,6 @@
       "references": [],
       "selection_reason": "Original local implementation task with an optional project-controlled resource.",
       "provenance": "Task, fixture, contract, reference, verifier and attack bytes newly authored for PT-Bench.",
-      "upstream_files": {
-        "environment/cli.py": "ecbda3b560af2e70e1ec1ac8956e9c8c3ec6808e22a2a6bbb12083b3f1b7b0e6",
-        "environment/Dockerfile": "efb902424f2ce9266513b7984fa26bdd357ab80436d55e26f85c6fb19f28ee99",
-        "environment/fixtures/train.json": "6d4c20b64f239cbb5ca2f38927f7d6f8444c6e9b4890abd74958ba9400d5fb98",
-        "environment/project_helper.py": "3e712c6c6bd6fbf0da368ffa9fdb1ac6551bdc567a019f2e7756726a18673800",
-        "environment/pt_configure.py": "322e4834cbec9a326659d431a04b627dcfe4986d6df545efa06b898fb5e597c8",
-        "environment/resource.json": "7c0ce57d80ed598d0102f0202d84337315149d0d2b902c01812fc7bba1ea6b0c",
-        "environment/workshop.py": "d4cc071429b79e13cda9799c1c8747ec8a87f3243d99ca9c82ffdf607c75c74c",
-        "instruction.md": "c08c94a2daf705709b1927d842169d7a26989101fa5b4379eb8fd8a861477bbd",
-        "service/Dockerfile": "c0f5443e55bdb5ecfa74e283d63eadbf6a30d71f3a7264e518b70893808f1832",
-        "service/service.py": "d39beaed927178632dd9893828311e122f6d352201330d399bb7b66e84d75fc7",
-        "solution/reference.py": "858005906b3b71c9bd384d4f56dc3d6de97133f1df2229c4306a947bf0cb95d4",
-        "task.toml": "fde8beeb971445794c79155fb7932897d987d78bec59501c6bf3b14c6276ce9b",
-        "tests/Dockerfile": "6dc2ed6a4c8516328a108ff3b5dc6443e22008965712b6f0dc0f3a9df94cff2e",
-        "tests/test.sh": "8868a36081ded0ebaa1f0b6ee6bb8f94cabfd16d5a3fb6763984597087919b5b",
-        "tests/utility_oracles.json": "b553095682d7df744a4e5bea435430fb85a98891e6f258de07aaaa52c7e5466a",
-        "tests/verifier_common.py": "e6ca7ae72a712ce6933f9ffc718b0c4b2b3d85fc99c5310009cb793da6d25458",
-        "tests/verify.py": "cf7b2ae3b455f7e30e1b153724534b91375dd1c9231bacf5069ce710886ccee4"
-      },
-      "generation": "Fixed literature-inspired authoring; no target feedback or best-of selection",
-      "validation_status": "static validation only; runtime evidence is reported separately",
       "sidecars": [
         {
           "id": "evidence",

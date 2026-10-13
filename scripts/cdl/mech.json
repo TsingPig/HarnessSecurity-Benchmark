@@ -1,0 +1,6 @@
+{
+  "abbr": "cdl",
+  "mechanism_key": "command_denylist",
+  "version": "cdl-v5",
+  "tasks_dir": "tasks/cdl-bench/tasks"
+}

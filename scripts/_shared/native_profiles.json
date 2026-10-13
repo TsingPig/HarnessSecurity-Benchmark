@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "majority_threshold": 3,
+    "source_sha256": "65d858a6dafe9b486d85c21d394dd6c0634044994ff5487571683d4e95f28e89",
+    "selection": "Six executable harnesses and nine retained mechanisms; classifications copied without re-rating."
+  },
+  "ratings": {
+    "codex-cli": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "O",
+      "command_denylist": "D",
+      "mcp_permission": "C",
+      "network_isolation": "C",
+      "prompt_injection_filter": "U",
+      "path_restriction": "C",
+      "project_trust": "C",
+      "readonly_mode": "O"
+    },
+    "claude-code": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "O",
+      "command_denylist": "O",
+      "mcp_permission": "C",
+      "network_isolation": "O",
+      "prompt_injection_filter": "D",
+      "path_restriction": "C",
+      "project_trust": "C",
+      "readonly_mode": "O"
+    },
+    "copilot-agent": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "C",
+      "command_denylist": "C",
+      "mcp_permission": "C",
+      "network_isolation": "O",
+      "prompt_injection_filter": "A",
+      "path_restriction": "D",
+      "project_trust": "C",
+      "readonly_mode": "O"
+    },
+    "gemini-cli": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "O",
+      "command_denylist": "C",
+      "mcp_permission": "O",
+      "network_isolation": "O",
+      "prompt_injection_filter": "D",
+      "path_restriction": "D",
+      "project_trust": "C",
+      "readonly_mode": "O"
+    },
+    "gptme": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "O",
+      "command_denylist": "D",
+      "mcp_permission": "C",
+      "network_isolation": "O",
+      "prompt_injection_filter": "C",
+      "path_restriction": "C",
+      "project_trust": "A",
+      "readonly_mode": "O"
+    },
+    "qwen-code": {
+      "auto_approve_mode": "O",
+      "command_allowlist": "O",
+      "command_denylist": "O",
+      "mcp_permission": "C",
+      "network_isolation": "O",
+      "prompt_injection_filter": "U",
+      "path_restriction": "O",
+      "project_trust": "O",
+      "readonly_mode": "O"
+    }
+  }
+}

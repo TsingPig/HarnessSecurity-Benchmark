@@ -1,0 +1,6 @@
+{
+  "abbr": "pif",
+  "mechanism_key": "prompt_injection_filter",
+  "version": "pif-v20",
+  "tasks_dir": "tasks/pif-bench/tasks"
+}

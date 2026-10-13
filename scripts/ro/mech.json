@@ -1,0 +1,6 @@
+{
+  "abbr": "ro",
+  "mechanism_key": "readonly_mode",
+  "version": "ro-neutral-write-journal-v2-20260928",
+  "tasks_dir": "tasks/ro-bench/tasks"
+}
